@@ -36,16 +36,12 @@ public class PlayerStats : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy" || other.tag == "EnemyProjectile")
-        {
-            other.gameObject.GetComponent<EnemyDamage>();
-            TakeDamage(5);
-        }
+
     }
 
-    void TakeDamage(int Damage)
+    public void TakeDamage(int amount)
     {
-        playerHealth -= Damage;
+        playerHealth -= amount;
     }
 
     void StatUpdate()
