@@ -10,19 +10,19 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] int playerLvl1Health = 25;
     [SerializeField] int playerMaxHealth = 25;
     [SerializeField] int playerHealthPerLevel = 10;
-
+    [Space]
     [SerializeField] int playerMana = 5;
     [SerializeField] int playerBaseMana = 5;
     [SerializeField] int playerLvl1Mana = 5;
     [SerializeField] int playerMaxMana = 5;
     [SerializeField] int playerManaPerLevel = 5;
-
+    [Space]
     [SerializeField] int currentLevel = 1;
     [SerializeField] int playerMaxLevel = 50;
 
     [SerializeField] int currentExp = 0;
     [SerializeField] int expToNextLevel = 350;
-
+    [Space]
     [SerializeField] int baseDamage = 1;
     [SerializeField] int playerDamage = 1;
 
