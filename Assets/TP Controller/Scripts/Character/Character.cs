@@ -37,6 +37,8 @@ public class Character : MonoBehaviour
         this.CurrentState = CharacterStateBase.GROUNDED_STATE;
 
         this.IsJogging = true;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     protected virtual void Update()

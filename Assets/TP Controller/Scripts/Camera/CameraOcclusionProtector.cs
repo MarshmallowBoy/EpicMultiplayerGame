@@ -3,7 +3,7 @@
 public class CameraOcclusionProtector : MonoBehaviour
 {
     private const float MIN_DISTANCE_TO_PLAYER = 1f;
-    private const float MAX_DISTANCE_TO_PLAYER = 5f;
+    private const float MAX_DISTANCE_TO_PLAYER = 20f;
     private const float MIN_NEAR_CLIP_PLANE_EXTENT_MULTIPLIER = 1f;
     private const float MAX_NEAR_CLIP_PLANE_EXTENT_MULTIPLIER = 2f;
     private const float MIN_OCCLUSION_MOVE_TIME = 0f;
