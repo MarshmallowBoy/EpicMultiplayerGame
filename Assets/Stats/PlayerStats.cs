@@ -26,7 +26,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] int baseDamage = 1;
     [SerializeField] int playerDamage = 1;
 
-    //EXP req from 1-50 446250
+    //EXP req from 1-50 164150 (was 170150 (was 446250))
     private void Update()
     {
         CanLevelUp();
@@ -62,7 +62,7 @@ public class PlayerStats : MonoBehaviour
 
     void ExpCurve()
     {
-        expToNextLevel = 350 * currentLevel;
+        expToNextLevel = 350 + (125 * (currentLevel - 1));
     }
 
     void CanLevelUp()
