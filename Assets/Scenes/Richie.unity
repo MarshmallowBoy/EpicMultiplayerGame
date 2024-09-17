@@ -1799,8 +1799,8 @@ MonoBehaviour:
   playerManaPerLevel: 5
   currentLevel: 1
   playerMaxLevel: 50
-  currentExp: 11800
-  expToNextLevel: 350
+  currentExp: 0
+  expToNextLevel: 225
   baseDamage: 1
   playerDamage: 1
 --- !u!4 &778720398
