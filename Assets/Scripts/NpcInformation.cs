@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
 public class NpcInformation : MonoBehaviour
 {
     public string NpcName = "PH";
@@ -20,16 +19,19 @@ public class NpcInformation : MonoBehaviour
     [Space]
     GameObject homePoint;
     QuestDatabase quests;
+
     void Start ()
     {
         quests = GetComponent<QuestDatabase>();
-        homePoint = new GameObject("homePoint" + NpcName);
+        homePoint = new GameObject(NpcName + "'s" + " Home point");
         homePoint.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         quests.LoadQuests();
+        /*
         Debug.Log(homePoint.transform.position);
         Debug.Log(homePoint.name);
         Debug.Log(this.transform.position);
         Debug.Log(this.NpcName);
         Debug.Log(this.NpcQuestsGiven);
+        */
     }
 }
