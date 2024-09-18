@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] int playerHealth = 25;
+    public int playerHealth = 25;
     [SerializeField] int playerBaseHealth = 25;
     [SerializeField] int playerLvl1Health = 25;
     [SerializeField] int playerMaxHealth = 25;
     [SerializeField] int playerHealthPerLevel = 10;
     [Space]
-    [SerializeField] int playerMana = 5;
+    public int playerMana = 5;
     [SerializeField] int playerBaseMana = 5;
     [SerializeField] int playerLvl1Mana = 5;
     [SerializeField] int playerMaxMana = 5;
@@ -19,12 +19,12 @@ public class PlayerStats : MonoBehaviour
     [Space]
     [SerializeField] int currentLevel = 1;
     [SerializeField] int playerMaxLevel = 50;
-
-    [SerializeField] int currentExp = 0;
+    [Space]
+    public int currentExp = 0;
     [SerializeField] int expToNextLevel = 225;
     [Space]
+    public int playerDamage = 1;
     [SerializeField] int baseDamage = 1;
-    [SerializeField] int playerDamage = 1;
 
     //EXP req from 1-50(1275) 95850 (was 164150 (was 170150 (was 446250)))
     private void Update()
@@ -32,11 +32,6 @@ public class PlayerStats : MonoBehaviour
         CanLevelUp();
         if(playerHealth > playerMaxHealth) { playerHealth = playerMaxHealth; }
         if(playerMana > playerMaxMana) { playerMana = playerMaxMana; }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
     }
 
     public void TakeDamage(int amount)
