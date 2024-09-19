@@ -37,6 +37,6 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, 
 
     void Awake()
     {
-        Inventory = GameObject.Find("Canvas").transform;
+        Inventory = GameObject.Find("InventoryCanvas").transform;
     }
 }

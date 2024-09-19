@@ -8,10 +8,10 @@ public class InventoryManager : MouseInteract
     public GameObject[] BobbleIndex;
     public GameObject[] HotbarSlots;
     public GameObject[] ContainerSlots;
-    public AudioSource EscapeMusic;
-    public GameObject truck;
+
     void Update()
     {
+        /*
         if (Input.GetButtonDown("Fire2"))
         {
             OpenChest();
@@ -21,7 +21,7 @@ public class InventoryManager : MouseInteract
         {
             ContainerInventoryUI.SetActive(false);
             UnloadInventory();
-        }
+        }*/
     }
 
     public void CollectItem()
