@@ -10,18 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc297635c2786f64c9fbdbead6893001, type: 3}
-  m_Name: Q4
+  m_Name: Q7
   m_EditorClassIdentifier: 
   Info:
-    Name: Moving In
-    Description: Given a run-down old farmhouse, It's time to start repairs
+    Name: 
+    Description: 
   Reward:
-    Currency: 30
-    Exp: 300
+    Currency: 5
+    Exp: 100
   Objectives:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}

@@ -11,12 +11,6 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] int playerMaxHealth = 25;
     [SerializeField] int playerHealthPerLevel = 10;
     [Space]
-    public int playerMana = 5;
-    [SerializeField] int playerBaseMana = 5;
-    [SerializeField] int playerLvl1Mana = 5;
-    [SerializeField] int playerMaxMana = 5;
-    [SerializeField] int playerManaPerLevel = 5;
-    [Space]
     [SerializeField] int currentLevel = 1;
     [SerializeField] int playerMaxLevel = 50;
     [Space]
@@ -26,38 +20,18 @@ public class PlayerStats : MonoBehaviour
     public int playerDamage = 1;
     [SerializeField] int baseDamage = 1;
 
+    protected bool lvlCheck = true;
+
     //EXP req from 1-50(1275) 95850 (was 164150 (was 170150 (was 446250)))
     private void Update()
     {
-        CanLevelUp();
+        if(currentExp >= expToNextLevel) { lvlCheck = true; if(lvlCheck == true) { CanLevelUp(); } }
         if(playerHealth > playerMaxHealth) { playerHealth = playerMaxHealth; }
-        if(playerMana > playerMaxMana) { playerMana = playerMaxMana; }
     }
 
     public void TakeDamage(int amount)
     {
         playerHealth -= amount;
-    }
-
-    void StatUpdate()
-    {
-        playerMaxHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
-        playerBaseHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
-        playerMaxMana = playerLvl1Mana + (playerManaPerLevel * (currentLevel - 1));
-        playerBaseMana = playerLvl1Mana + (playerManaPerLevel * (currentLevel - 1));
-        baseDamage = currentLevel;
-        playerDamage = baseDamage; //Plus gear bonuses, if any
-    }
-
-    void LevelUpHeal()
-    {
-        playerHealth = playerMaxHealth;
-        playerMana = playerMaxMana;
-    }
-
-    void ExpCurve()
-    {
-        expToNextLevel = 225 + (75 * (currentLevel - 1));
     }
 
     void CanLevelUp()
@@ -79,5 +53,23 @@ public class PlayerStats : MonoBehaviour
         StatUpdate();
         LevelUpHeal();
         ExpCurve();
+    }
+
+    void ExpCurve()
+    {
+        expToNextLevel = 225 + (75 * (currentLevel - 1));
+    }
+
+    void StatUpdate()
+    {
+        playerMaxHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
+        playerBaseHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
+        baseDamage = currentLevel;
+        playerDamage = baseDamage * (150/100);
+    }
+
+    void LevelUpHeal()
+    {
+        playerHealth = playerMaxHealth;
     }
 }

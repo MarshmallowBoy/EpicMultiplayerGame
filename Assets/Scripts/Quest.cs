@@ -34,7 +34,7 @@ public class Quest : ScriptableObject
     public abstract class QuestObjectives : ScriptableObject
     {
         protected string Description;
-        public int CurrentAmount {  get; protected set; }
+        public int CurrentAmount { get; protected set; }
         public int RequiredAmount = 1;
 
         public bool Completed { get; protected set; }
@@ -83,7 +83,7 @@ public class Quest : ScriptableObject
     }
     private void CheckObjectives()
     {
-        Completed = Objectives.All(g: QuestObjectives => g.Completed);
+        Completed = Objectives.All(QuestObjectives => Completed);
         if (Completed)
         {
             QuestCompleted.Invoke(arg0: this);

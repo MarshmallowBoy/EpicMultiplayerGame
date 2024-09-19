@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: Q6
   m_EditorClassIdentifier: 
   Info:
-    Name: 
-    Description: 
+    Name: Workday
+    Description: Time to start Farming!
   Reward:
     Currency: 0
     Exp: 75
-  Objectives: []
+  Objectives:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Q5
   m_EditorClassIdentifier: 
   Info:
-    Name: 
-    Description: 
+    Name: A Seedy Place
+    Description: Find Seeds
   Reward:
     Currency: 0
     Exp: 75
-  Objectives: []
+  Objectives:
+  - {fileID: 0}
+  - {fileID: 0}
