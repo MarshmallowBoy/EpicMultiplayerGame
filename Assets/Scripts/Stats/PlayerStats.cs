@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerStats : MonoBehaviour
 {
+    public int hMod = 0;
     public int playerHealth = 25;
     [SerializeField] int playerBaseHealth = 25;
     [SerializeField] int playerLvl1Health = 25;
@@ -17,9 +17,11 @@ public class PlayerStats : MonoBehaviour
     public int currentExp = 0;
     [SerializeField] int expToNextLevel = 225;
     [Space]
+    public int dMod = 0;
     public int playerDamage = 1;
     [SerializeField] int baseDamage = 1;
-
+    [Space]
+    public int Gold = 0;
     protected bool lvlCheck = true;
 
     //EXP req from 1-50(1275) 95850 (was 164150 (was 170150 (was 446250)))
@@ -27,6 +29,21 @@ public class PlayerStats : MonoBehaviour
     {
         if(currentExp >= expToNextLevel) { lvlCheck = true; if(lvlCheck == true) { CanLevelUp(); } }
         if(playerHealth > playerMaxHealth) { playerHealth = playerMaxHealth; }
+    }
+
+    public void IncreaseHealth(int hAmount)
+    {
+        hMod = hAmount;
+    }
+    
+    public void IncreaseDamage(int dAmount)
+    {
+        dMod += dAmount;
+    }
+
+    public void IncreaseMaxLevel(int lAmount)
+    {
+        playerMaxLevel += lAmount;
     }
 
     public void TakeDamage(int amount)
@@ -38,7 +55,7 @@ public class PlayerStats : MonoBehaviour
     {
         if(currentLevel >= playerMaxLevel)
         {
-            currentExp = 0;
+            expToNextLevel = 2000000000;
         }
         else if(currentLevel < playerMaxLevel && currentExp >= expToNextLevel)
         {
@@ -62,10 +79,10 @@ public class PlayerStats : MonoBehaviour
 
     void StatUpdate()
     {
-        playerMaxHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
+        playerMaxHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1)) + hMod;
         playerBaseHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
         baseDamage = currentLevel;
-        playerDamage = baseDamage * (150/100);
+        playerDamage = baseDamage * (150/100) + dMod;
     }
 
     void LevelUpHeal()
