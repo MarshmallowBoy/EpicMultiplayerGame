@@ -77,5 +77,6 @@ public class Crafting : MonoBehaviour
     public void Start()
     {
         Recipes.Add(new Vector3Int(4, 2, 1));
+        Recipes.Add(new Vector3Int(9, 9, 10));
     }
 }
