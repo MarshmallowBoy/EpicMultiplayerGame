@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public int damage = 5;
+    public string enemyType = "PH";
+    [SerializeField] int enemyLevel = 1;
+
+    public int damage;
+    [SerializeField] int damagePercentBonus = 10;
     public PlayerStats pstats;
+
+    private void Update()
+    {
+        damage = 1 + 2 * (enemyLevel - 1) * ((damagePercentBonus/100) + 1);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            if(pstats == null)
-            {
-                pstats = other.GetComponent<PlayerStats>();
-            }
+            pstats = other.GetComponent<PlayerStats>();
             pstats.TakeDamage(damage);
         }
     }
