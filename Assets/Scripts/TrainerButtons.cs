@@ -12,7 +12,7 @@ public class TrainerButtons : MonoBehaviour
     public int damageCost = 5;
     public int dAmountToIncrease = 2;
     [Space]
-    [SerializeField] int levelCost = 5000;
+    public int levelCost = 5000;
     [SerializeField] int lAmountToIncrease = 1;
 
     private void Start()

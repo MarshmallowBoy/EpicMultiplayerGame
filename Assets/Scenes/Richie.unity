@@ -1826,14 +1826,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 778720396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebedf225aac2d5b4eaabed65e15d73e7, type: 3}
+  m_Script: {fileID: 11500000, guid: f3e223b21d440844c90460b8206316f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType: Slime
-  enemyLevel: 2
-  damage: 0
-  damagePercentBonus: 100
+  enemyLevel: 1
+  healthRoll: 0
+  eDamage: 0
+  eHealth: 0
   pstats: {fileID: 0}
+  myType: 0
 --- !u!1 &786979812
 GameObject:
   m_ObjectHideFlags: 0
