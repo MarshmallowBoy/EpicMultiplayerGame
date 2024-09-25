@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 858623900354391537}
   - component: {fileID: -6467245397254808822}
   m_Layer: 5
-  m_Name: Pistol
+  m_Name: SlimePurificationCatalyst
   m_TagString: Bobble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f09dea071b968eb4a8f5cf32a77d5fcf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a51fb302a928b44b9fb92ba8cf0914c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73f20b81dd3e4f4cbeee420d5f58dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 2
-  Name: Pistol
+  ID: 5
+  Name: Slime Purification Catalyst
 --- !u!114 &-6467245397254808822
 MonoBehaviour:
   m_ObjectHideFlags: 0

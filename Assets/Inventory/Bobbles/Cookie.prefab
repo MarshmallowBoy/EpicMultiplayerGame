@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 858623900354391537}
   - component: {fileID: -6467245397254808822}
   m_Layer: 5
-  m_Name: Glass Shard
+  m_Name: Cookie
   m_TagString: Bobble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,14 +60,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 257eef053cd836d4aa325e00a5adb8bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1b851501986a97458a752b02753bcfd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73f20b81dd3e4f4cbeee420d5f58dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 5
-  Name: Glass Shard
+  ID: 10
+  Name: Cookie
 --- !u!114 &-6467245397254808822
 MonoBehaviour:
   m_ObjectHideFlags: 0

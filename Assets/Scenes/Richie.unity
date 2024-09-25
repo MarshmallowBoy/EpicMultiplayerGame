@@ -1768,6 +1768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 778720398}
   - component: {fileID: 778720397}
+  - component: {fileID: 778720399}
   m_Layer: 0
   m_Name: Simulator
   m_TagString: Untagged
@@ -1787,22 +1788,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f71d96bb8938af48add67099f959c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hMod: 0
   playerHealth: 25
   playerBaseHealth: 25
   playerLvl1Health: 25
   playerMaxHealth: 25
   playerHealthPerLevel: 10
-  playerMana: 5
-  playerBaseMana: 5
-  playerLvl1Mana: 5
-  playerMaxMana: 5
-  playerManaPerLevel: 5
   currentLevel: 1
   playerMaxLevel: 50
   currentExp: 102200
   expToNextLevel: 225
+  dMod: 0
   playerDamage: 1
   baseDamage: 1
+  Gold: 0
 --- !u!4 &778720398
 Transform:
   m_ObjectHideFlags: 0
@@ -1818,6 +1817,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &778720399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778720396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e223b21d440844c90460b8206316f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLevel: 1
+  healthRoll: 0
+  eDamage: 0
+  eHealth: 0
+  pstats: {fileID: 0}
+  myType: 0
 --- !u!1 &786979812
 GameObject:
   m_ObjectHideFlags: 0
