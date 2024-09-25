@@ -8,6 +8,8 @@ public class EnemyStats : MonoBehaviour
 {
     [SerializeField] int enemyLevel = 1;
     [SerializeField] int healthRoll;
+    [SerializeField] int hR1 = 5;
+    [SerializeField] int hR2 = 25;
 
     public int eDamage;
     public int eHealth;
@@ -17,7 +19,8 @@ public class EnemyStats : MonoBehaviour
 
     void Awake()
     {
-        healthRoll = Random.Range(5, 25);
+        healthRoll = Random.Range(hR1, hR2);
+
         if (myType == EnemyType.Slime)
         {
             eDamage = 1 + 2 * (enemyLevel - 1);
@@ -27,20 +30,6 @@ public class EnemyStats : MonoBehaviour
         {
             eDamage = 10 + 2 * (enemyLevel + 3);
             eHealth = healthRoll * (enemyLevel + 2);
-        }
-        
-        int Roll = Random.Range(1, 2);
-        if (Roll == 1)
-        {
-            myType = EnemyType.Slime;
-            eHealth += 10;
-
-        }
-
-        else if (Roll == 2)
-        {
-            myType = EnemyType.Blob;
-            eHealth += 50;
         }
     }
 
