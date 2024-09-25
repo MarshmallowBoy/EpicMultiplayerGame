@@ -19,7 +19,7 @@ public class PlayerStats : MonoBehaviour
     [Space]
     public int dMod = 0;
     public int playerDamage = 1;
-    [SerializeField] int baseDamage = 1;
+    [SerializeField] int baseDamage = 3;
     [Space]
     public int Gold = 0;
     protected bool lvlCheck = true;
