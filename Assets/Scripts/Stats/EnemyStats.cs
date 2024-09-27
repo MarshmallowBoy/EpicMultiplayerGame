@@ -22,6 +22,7 @@ public class EnemyStats : MonoBehaviour
     [Space]
     public int eFinalDamage;
     public int eFinalHealth;
+    public int eBaseHealth = 10;
     private PlayerStats pstats;
 
     public EnemyType myType;
@@ -47,12 +48,12 @@ public class EnemyStats : MonoBehaviour
         if(myType == EnemyType.Slime)
         {
             eFinalDamage = damageRoll + 2 * enemyLevel;
-            eFinalHealth = healthRoll * enemyLevel;
+            eFinalHealth = eBaseHealth + (healthRoll * enemyLevel);
         }
         else if(myType == EnemyType.Blob)
         {
             eFinalDamage = damageRoll + 5 * (enemyLevel + 3);
-            eFinalHealth = healthRoll * (enemyLevel + 2);
+            eFinalHealth = eBaseHealth + (healthRoll * (enemyLevel + 2));
         }
     }
 
