@@ -31,14 +31,17 @@ public class EnemyStats : MonoBehaviour
         if(rollLevel == true)
         {
             enemyLevel = Random.Range(1, 50);
+            rollLevel = false;
         }
         if(rollDamage == true)
         {
             damageRoll = Random.Range(dR1, dR2);
+            rollDamage = false;
         }
         if(rollHealth == true)
         {
             healthRoll = Random.Range(hR1, hR2);
+            rollHealth = false;
         }
 
         if(myType == EnemyType.Slime)
