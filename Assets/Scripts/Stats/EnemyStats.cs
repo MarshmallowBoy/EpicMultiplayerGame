@@ -63,18 +63,31 @@ public class EnemyStats : MonoBehaviour
             }
             pstats.TakeDamage(eFinalDamage);
         }
+
+        if(other.tag == "Bullet")
+        {
+            eFinalHealth -= pstats.playerDamage;
+            Destroy(other.gameObject);
+            if(eFinalHealth >= 0)
+            {
+                Drops();
+                Destroy(gameObject);
+            }
+        }
     }
 
 
 
     private void Drops()
     {
-        if (myType == EnemyType.Slime)
+        if(myType == EnemyType.Slime)
         {
+            //drops 1-6 slime goo with a 1.5% chance to drop a slime Gem and a 15% for Slime Soda
 
         }
-        else if (myType == EnemyType.Blob)
+        else if(myType == EnemyType.Blob)
         {
+            //drops 0-3 Blob fertalizer with a 10% chance for 1-3 slime goo
 
         }
     }
