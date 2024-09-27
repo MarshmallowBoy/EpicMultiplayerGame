@@ -17,7 +17,7 @@ public class TrainerButtons : MonoBehaviour
 
     private void Start()
     {
-        playerStats = GetComponent<PlayerStats>();
+        playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
     }
     
     public void HealthIncrease()
