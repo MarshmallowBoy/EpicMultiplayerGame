@@ -22,19 +22,19 @@ public class TrainerButtons : MonoBehaviour
     
     public void HealthIncrease()
     {
-        if(playerStats.Gold == 0) { return; }
+        if(playerStats.Gold <= healthCost) { return; }
         else if(playerStats.Gold >= healthCost) { playerStats.IncreaseHealth(hAmountToIncrease); }
     }
 
     public void DamageIncrease()
     {
-        if (playerStats.Gold == 0) { return; }
+        if (playerStats.Gold <= damageCost) { return; }
         else if (playerStats.Gold >= damageCost) { playerStats.IncreaseDamage(dAmountToIncrease); }
     }
 
     public void MaxLevelIncrease()
     {
-        if (playerStats.Gold == 0) { return; }
+        if (playerStats.Gold <= levelCost) { return; }
         else if (playerStats.Gold >= levelCost) { playerStats.IncreaseMaxLevel(lAmountToIncrease); }
     }
 }

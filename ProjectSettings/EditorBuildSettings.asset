@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CastleIndoors.unity
     guid: b83bc0fe6f4a00146bd0a0cd3e373963
+  - enabled: 1
+    path: Assets/Scenes/Market.unity
+    guid: 5197711d26b1d1c42a161bfc5ce9b36b
   m_configObjects: {}
