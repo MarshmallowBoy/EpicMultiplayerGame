@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 9
-  Name: Grain
+  Name: Truck Key
 --- !u!114 &-6467245397254808822
 MonoBehaviour:
   m_ObjectHideFlags: 0

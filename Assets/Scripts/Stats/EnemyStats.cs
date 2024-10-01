@@ -29,13 +29,10 @@ public class EnemyStats : MonoBehaviour
 
     void Awake()
     {
-        pstats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-
-        if (rollLevel == true)
+        if(rollLevel == true)
         {
             enemyLevel = Random.Range(1, 50);
             rollLevel = false;
-            rollHealth = true;
         }
         if(rollDamage == true)
         {
@@ -64,6 +61,10 @@ public class EnemyStats : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            if(pstats == null)
+            {
+                pstats = other.GetComponent<PlayerStats>();
+            }
             pstats.TakeDamage(eFinalDamage);
         }
 
