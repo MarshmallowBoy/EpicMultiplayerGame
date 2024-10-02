@@ -21,6 +21,7 @@ public class PlayerStats : MonoBehaviour
     public int playerDamage = 1;
     [SerializeField] int baseDamage = 3;
     [Space]
+    public int resistance = 0;
     public int Gold = 0;
     protected bool lvlCheck = true;
 
@@ -46,6 +47,12 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void IncreaseResistance(int rAmount)
+    {
+        resistance += rAmount;
+        Gold -= statUp.resistanceCost;
+    }
+
     public void IncreaseHealth(int hAmount)
     {
         hMod += hAmount;
@@ -66,6 +73,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        amount -= resistance;
         playerHealth -= amount;
     }
 
