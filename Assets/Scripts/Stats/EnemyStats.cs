@@ -19,44 +19,82 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] bool rollLevel = false;
     [SerializeField] bool rollHealth = false;
     [SerializeField] bool rollDamage = false;
+    [SerializeField] bool isRoyal = false;
+    [SerializeField] bool isBoss = false;
     [Space]
     public int eFinalDamage;
     public int eFinalHealth;
     public int eBaseHealth = 10;
     private PlayerStats pstats;
+    [SerializeField] private int entityID = 0;
 
     public EnemyType myType;
 
     void Awake()
     {
         pstats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-
+        
         if (rollLevel == true)
         {
             enemyLevel = Random.Range(1, 50);
             rollLevel = false;
             rollHealth = true;
         }
-        if(rollDamage == true)
+        if (rollDamage == true)
         {
             damageRoll = Random.Range(dR1, dR2);
             rollDamage = false;
         }
-        if(rollHealth == true)
+        if (rollHealth == true)
         {
             healthRoll = Random.Range(hR1, hR2);
             rollHealth = false;
         }
 
-        if(myType == EnemyType.Slime)
+        EnemyStatCalculation();
+
+        if(isRoyal == true) 
+        { 
+            RoyaltyCalculation();
+        }
+    }
+
+    private void EnemyStatCalculation()
+    {
+        if (myType == EnemyType.Slime)
         {
-            eFinalDamage = damageRoll + 2 * enemyLevel;
+            eFinalDamage = damageRoll + (2 * enemyLevel);
             eFinalHealth = eBaseHealth + (healthRoll * enemyLevel);
         }
-        else if(myType == EnemyType.Blob)
+        else if (myType == EnemyType.Blob)
         {
-            eFinalDamage = damageRoll + 5 * (enemyLevel + 3);
+            eFinalDamage = damageRoll + (5 * (enemyLevel + 3));
             eFinalHealth = eBaseHealth + (healthRoll * (enemyLevel + 2));
+        }
+    }
+
+    private void BossCalculation()
+    {
+        enemyLevel = 55;
+        EnemyStatCalculation();
+    }
+
+    private void RoyaltyCalculation()
+    {
+        if (entityID != 20 || entityID != 21 || entityID != 42) { isRoyal = false; return; }
+        if (damageRoll <= 2) { Debug.Log("damageRoll is too low for " + entityID + ", " + damageRoll + ", rerolling..."); damageRoll = Random.Range(3, 15); Debug.Log(entityID + " new roll, " + damageRoll); }
+        if (healthRoll <= 9) { Debug.Log("healthRoll is too low for " + entityID + ", " + healthRoll + ", rerolling..."); healthRoll = Random.Range(15, 35); Debug.Log(entityID + " new roll, " + healthRoll); }
+        if (enemyLevel <= 34 && entityID == 20 || entityID == 21) { Debug.Log("levelRoll is too low for " + entityID + ", " + enemyLevel + ", rerolling..."); enemyLevel = Random.Range(35, 50); Debug.Log(entityID + " new roll, " + enemyLevel); }
+        EnemyStatCalculation();
+        if (entityID == 20 || entityID == 21)
+        {
+            eFinalDamage *= (damageRoll / 2);
+            eFinalHealth *= (healthRoll / 2);
+        }
+        else if (entityID == 42)
+        {
+            eFinalDamage *= 2;
+            eFinalHealth *= 2;
         }
     }
 
@@ -71,15 +109,14 @@ public class EnemyStats : MonoBehaviour
         {
             eFinalHealth -= pstats.playerDamage;
             Destroy(other.gameObject);
-            if(eFinalHealth >= 0)
-            {
-                Drops();
-                Destroy(gameObject);
-            }
+        }
+        
+        if(eFinalHealth >= 0)
+        {
+            Drops();
+            Destroy(gameObject);
         }
     }
-
-
 
     private void Drops()
     {

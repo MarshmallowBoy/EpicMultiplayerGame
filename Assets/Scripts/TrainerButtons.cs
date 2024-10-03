@@ -8,28 +8,44 @@ public class TrainerButtons : MonoBehaviour
     PlayerStats playerStats;
     public int healthCost = 5;
     public int hAmountToIncrease = 10;
+    public int hCostMax = 100;
+    [SerializeField] int hCostScaler = 1;
     [Space]
     public int damageCost = 5;
     public int dAmountToIncrease = 2;
+    public int dCostMax = 100;
+    [SerializeField] int dCostScaler = 1;
+    [Space]
+    public int resistanceCost = 25;
+    public int rAmountToIncrease = 1;
+    public int rCostMax = 500;
+    [SerializeField] int rCostScaler = 5;
     [Space]
     public int levelCost = 5000;
     [SerializeField] int lAmountToIncrease = 1;
 
-    private void Start()
+    private void Awake()
     {
         playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
     }
-    
+    public void ResisanceIncrease()
+    {
+        if(playerStats.Gold <= resistanceCost) { return; }
+        else if(playerStats.Gold >= resistanceCost) { playerStats.IncreaseResistance(rAmountToIncrease); }
+        if (resistanceCost < rCostMax) { resistanceCost += rCostScaler; }
+    }
     public void HealthIncrease()
     {
         if(playerStats.Gold <= healthCost) { return; }
         else if(playerStats.Gold >= healthCost) { playerStats.IncreaseHealth(hAmountToIncrease); }
+        if(healthCost < hCostMax) { healthCost += hCostScaler; }
     }
 
     public void DamageIncrease()
     {
         if (playerStats.Gold <= damageCost) { return; }
         else if (playerStats.Gold >= damageCost) { playerStats.IncreaseDamage(dAmountToIncrease); }
+        if (damageCost < dCostMax) { damageCost += dCostScaler; }
     }
 
     public void MaxLevelIncrease()
