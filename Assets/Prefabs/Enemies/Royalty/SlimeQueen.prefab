@@ -161,6 +161,8 @@ GameObject:
   - component: {fileID: 728330003775453710}
   - component: {fileID: 1047784079647655755}
   - component: {fileID: 8798519844946837865}
+  - component: {fileID: 6425147103415101430}
+  - component: {fileID: 5452107369043199114}
   m_Layer: 0
   m_Name: SlimeQueen
   m_TagString: Untagged
@@ -237,7 +239,45 @@ MonoBehaviour:
   entityID: 21
   entityName: Queen
   entityType: PH
+  inventoryManager: {fileID: 0}
+  Drop: 0
   myType: 0
+--- !u!114 &6425147103415101430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487342027997507882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  chaseDistance: 10
+--- !u!64 &5452107369043199114
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487342027997507882}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &7762545448621637035
 GameObject:
   m_ObjectHideFlags: 0

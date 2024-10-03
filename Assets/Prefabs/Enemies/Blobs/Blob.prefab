@@ -249,6 +249,8 @@ GameObject:
   - component: {fileID: 157877428909044472}
   - component: {fileID: 702413170339838426}
   - component: {fileID: 772896323744659841}
+  - component: {fileID: 2638474218693861406}
+  - component: {fileID: 6588506149855192897}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -325,7 +327,45 @@ MonoBehaviour:
   entityID: 8
   entityName: Average
   entityType: PH
+  inventoryManager: {fileID: 0}
+  Drop: 0
   myType: 1
+--- !u!114 &2638474218693861406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6680572221764338034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  chaseDistance: 10
+--- !u!64 &6588506149855192897
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6680572221764338034}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &8666532676166951903
 GameObject:
   m_ObjectHideFlags: 0

@@ -280,6 +280,8 @@ GameObject:
   - component: {fileID: 3982847560004006805}
   - component: {fileID: 3555122788181600443}
   - component: {fileID: 1332521091406775390}
+  - component: {fileID: 8302069608171982195}
+  - component: {fileID: 2361691806455030466}
   m_Layer: 0
   m_Name: SlimeClean
   m_TagString: Untagged
@@ -356,7 +358,45 @@ MonoBehaviour:
   entityID: 2
   entityName: Clean
   entityType: PH
+  inventoryManager: {fileID: 0}
+  Drop: 0
   myType: 0
+--- !u!114 &8302069608171982195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310907243309009765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  chaseDistance: 10
+--- !u!64 &2361691806455030466
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310907243309009765}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &7384594163736397056
 GameObject:
   m_ObjectHideFlags: 0

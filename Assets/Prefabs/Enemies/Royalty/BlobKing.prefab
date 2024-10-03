@@ -312,6 +312,8 @@ GameObject:
   - component: {fileID: 8928218547285049506}
   - component: {fileID: 2501083847076065040}
   - component: {fileID: 3671474888449821657}
+  - component: {fileID: 8833491374419185540}
+  - component: {fileID: 4605030262260207355}
   m_Layer: 0
   m_Name: BlobKing
   m_TagString: Untagged
@@ -388,4 +390,42 @@ MonoBehaviour:
   entityID: 20
   entityName: King
   entityType: PH
+  inventoryManager: {fileID: 0}
+  Drop: 0
   myType: 1
+--- !u!114 &8833491374419185540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7748528756801680212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  chaseDistance: 10
+--- !u!64 &4605030262260207355
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7748528756801680212}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

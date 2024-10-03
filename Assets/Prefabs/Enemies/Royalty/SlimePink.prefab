@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 972662963600489115}
   - component: {fileID: 579994547133377815}
   - component: {fileID: 5241156452047732392}
+  - component: {fileID: 8849297487858584953}
+  - component: {fileID: 4980373665176356466}
   m_Layer: 0
   m_Name: SlimePink
   m_TagString: Untagged
@@ -87,7 +89,45 @@ MonoBehaviour:
   entityID: 42
   entityName: Pinky
   entityType: PH
+  inventoryManager: {fileID: 0}
+  Drop: 0
   myType: 0
+--- !u!114 &8849297487858584953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674346682803050545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  chaseDistance: 10
+--- !u!64 &4980373665176356466
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674346682803050545}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &2195496742250648060
 GameObject:
   m_ObjectHideFlags: 0

@@ -80,6 +80,6 @@ public class Crafting : MonoBehaviour
         Recipes.Add(new Vector3Int(2, 2, 3));
         Recipes.Add(new Vector3Int(2, 3, 4));
         Recipes.Add(new Vector3Int(3, 3, 5));
-        Recipes.Add(new Vector3Int(9, 9, 10));
+        Recipes.Add(new Vector3Int(1, 1, 7));
     }
 }
