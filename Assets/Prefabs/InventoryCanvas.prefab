@@ -381,6 +381,7 @@ MonoBehaviour:
   - {fileID: 755844590843139039, guid: 2377deb654eb709469d6b729dbd5a157, type: 3}
   - {fileID: 755844590843139039, guid: 7a9ee89258bf42f4ebd14a78207d39ca, type: 3}
   - {fileID: 755844590843139039, guid: e7ad05afba7747749bd3bb089195edb2, type: 3}
+  - {fileID: 755844590843139039, guid: 805030b4ff7ffcb4797072256b082756, type: 3}
   HotbarSlots: []
   ContainerSlots: []
 --- !u!1 &6122809513472257231

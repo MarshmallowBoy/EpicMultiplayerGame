@@ -81,4 +81,17 @@ public class InventoryManager : MouseInteract
         }
     }
 
+    public void GiveItem(int id)
+    {
+        for (int i = 0; i < ContainerSlots.Length; i++)
+        {
+            if (ContainerSlots[i].transform.childCount > 0)
+            {
+                continue;
+            }
+            Instantiate(BobbleIndex[id], ContainerSlots[i].transform);
+            return;
+        }
+    }
+
 }
