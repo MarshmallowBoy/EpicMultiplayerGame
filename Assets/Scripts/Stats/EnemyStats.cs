@@ -27,13 +27,16 @@ public class EnemyStats : MonoBehaviour
     public int eBaseHealth = 10;
     private PlayerStats pstats;
     [SerializeField] private int entityID = 0;
+    [SerializeField] private string entityName = "PH";
+    [SerializeField] private string entityType = "PH";
 
     public EnemyType myType;
 
     void Awake()
     {
         pstats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-        
+        entityType = (myType + " " + entityName);
+
         if (rollLevel == true)
         {
             enemyLevel = Random.Range(1, 50);
@@ -52,8 +55,13 @@ public class EnemyStats : MonoBehaviour
         }
 
         EnemyStatCalculation();
+        
+        if (isBoss == true)
+        {
+            BossCalculation();
+        }
 
-        if(isRoyal == true) 
+        if (isRoyal == true) 
         { 
             RoyaltyCalculation();
         }
@@ -77,21 +85,33 @@ public class EnemyStats : MonoBehaviour
     {
         enemyLevel = 55;
         EnemyStatCalculation();
+        eFinalDamage *= 2;
+        eFinalHealth *= 2;
+        Debug.Log(entityType + " is a Boss, it's stats have been adjusted accordingly. ID = " + entityID);
     }
 
     private void RoyaltyCalculation()
     {
-        if (entityID != 20 || entityID != 21 || entityID != 42) { isRoyal = false; return; }
-        if (damageRoll <= 2) { Debug.Log("damageRoll is too low for " + entityID + ", " + damageRoll + ", rerolling..."); damageRoll = Random.Range(3, 15); Debug.Log(entityID + " new roll, " + damageRoll); }
-        if (healthRoll <= 9) { Debug.Log("healthRoll is too low for " + entityID + ", " + healthRoll + ", rerolling..."); healthRoll = Random.Range(15, 35); Debug.Log(entityID + " new roll, " + healthRoll); }
-        if (enemyLevel <= 34 && entityID == 20 || entityID == 21) { Debug.Log("levelRoll is too low for " + entityID + ", " + enemyLevel + ", rerolling..."); enemyLevel = Random.Range(35, 50); Debug.Log(entityID + " new roll, " + enemyLevel); }
+        if(entityID != 20 && entityID != 21 && entityID != 42) { Debug.LogWarning(entityType + " is not supposed to be royal, please change this. It is " + "ID# " + entityID); isRoyal = false; return; }
+        if(entityID == 20 || entityID == 21 || entityID == 42) { isRoyal = true; }
+        if(damageRoll <= 2) { Debug.Log("damageRoll is too low for " + entityType + ", " + damageRoll + ", rerolling..."); damageRoll = Random.Range(3, 15); Debug.Log(entityType + " new damageRoll, " + damageRoll + ", ID = " + entityID); }
+        if(healthRoll <= 9) { Debug.Log("healthRoll is too low for " + entityType + ", " + healthRoll + ", rerolling..."); healthRoll = Random.Range(15, 35); Debug.Log(entityType + " new healthRoll, " + healthRoll + ", ID = " + entityID); }
+        if(isBoss == true) { enemyLevel = 55; Debug.Log(entityType + " is a Boss. It is ID# " + entityID); }
+        else if(enemyLevel <= 34 && entityID == 20 || entityID == 21) { Debug.Log("levelRoll is too low for " + entityType + ", " + enemyLevel + ", rerolling..."); enemyLevel = Random.Range(35, 50); Debug.Log(entityType + " new level, " + enemyLevel + ", ID = " + entityID); }
+       
         EnemyStatCalculation();
-        if (entityID == 20 || entityID == 21)
+        
+        if(entityID == 20 || entityID == 21)
         {
             eFinalDamage *= (damageRoll / 2);
             eFinalHealth *= (healthRoll / 2);
+            if(isBoss == true)
+            {
+                eFinalDamage *= 2;
+                eFinalHealth *= 2;
+            }
         }
-        else if (entityID == 42)
+        else if(entityID == 42)
         {
             eFinalDamage *= 2;
             eFinalHealth *= 2;
@@ -122,12 +142,12 @@ public class EnemyStats : MonoBehaviour
     {
         if(myType == EnemyType.Slime)
         {
-            //drops 1-6 slime goo with a 1.5% chance to drop a slime Gem and a 15% for Slime Soda
+            //drops 1-2 slime goo with a 1% chance to drop a slime Gem and a 20% for Slime Soda
 
         }
         else if(myType == EnemyType.Blob)
         {
-            //drops 0-3 Blob fertalizer with a 10% chance for 1-3 slime goo
+            //drops 0-3 Blob fertalizer with a 10% chance for 1 slime goo
 
         }
     }
