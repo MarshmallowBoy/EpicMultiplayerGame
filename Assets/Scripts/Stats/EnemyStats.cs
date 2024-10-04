@@ -23,7 +23,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] bool isBoss = false;
     [Space]
     public int eFinalDamage;
-    public int eFinalHealth;
+    public int eFinalHealth = 1;
     public int eBaseHealth = 10;
     private PlayerStats pstats;
     public int entityID = 0;
@@ -31,13 +31,13 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private string entityType = "PH";
     public InventoryManager inventoryManager;
 
-    public bool Drop;
+    public bool Drop = false;
 
     private void Update()
     {
-        if (Drop == false)
+        if (Drop == true)
         {
-            Drop = true;
+            Drop = false;
             Drops();
         }
     }
@@ -106,10 +106,12 @@ public class EnemyStats : MonoBehaviour
 
     private void RoyaltyCalculation()
     {
+        /*
         if(entityID != 20 && entityID != 21 && entityID != 42) { Debug.LogWarning(entityType + " is not supposed to be royal, please change this. It is " + "ID# " + entityID); isRoyal = false; return; }
         if(entityID == 20 || entityID == 21 || entityID == 42) { isRoyal = true; }
         if(damageRoll <= 2) { Debug.Log("damageRoll is too low for " + entityType + ", " + damageRoll + ", rerolling..."); damageRoll = Random.Range(3, 15); Debug.Log(entityType + " new damageRoll, " + damageRoll + ", ID = " + entityID); }
         if(healthRoll <= 9) { Debug.Log("healthRoll is too low for " + entityType + ", " + healthRoll + ", rerolling..."); healthRoll = Random.Range(15, 35); Debug.Log(entityType + " new healthRoll, " + healthRoll + ", ID = " + entityID); }
+        */
         if(isBoss == true) { enemyLevel = 55; Debug.Log(entityType + " is a Boss. It is ID# " + entityID); }
         else if(enemyLevel <= 34 && entityID == 20 || entityID == 21) { Debug.Log("levelRoll is too low for " + entityType + ", " + enemyLevel + ", rerolling..."); enemyLevel = Random.Range(35, 50); Debug.Log(entityType + " new level, " + enemyLevel + ", ID = " + entityID); }
        
@@ -154,31 +156,31 @@ public class EnemyStats : MonoBehaviour
 
     private void Drops()
     {
-        if(myType == EnemyType.Slime)
+        if (myType == EnemyType.Slime)
         {
             Debug.Log("Drops");
             //drops 1-2 slime goo with a 1% chance to drop a slime Gem and a 20% for Slime Soda
-            for(int i = 0; i < Random.Range(1,2); i++)
+            for (int i = 0; i < Random.Range(1,2); i++)
             {
                 inventoryManager.GiveItem(2);
             }
-            if(Random.Range(1, 5) == 1)
+            if (Random.Range(1, 5) == 1)
             {
                 inventoryManager.GiveItem(4);
             }
-            if(Random.Range(1, 100) == 1)
+            if (Random.Range(1, 100) == 1)
             {
                 inventoryManager.GiveItem(3);
             }
         }
-        else if(myType == EnemyType.Blob)
+        else if (myType == EnemyType.Blob)
         {
             //drops 0-3 Blob fertalizer with a 10% chance for 1 slime goo
-            for(int i = 0; i < Random.Range(0, 3); i++)
+            for (int i = 0; i < Random.Range(0, 3); i++)
             { 
                 inventoryManager.GiveItem(6);
             }
-            if(Random.Range(1, 10) == 1)
+            if (Random.Range(1, 10) == 1)
             {
                 inventoryManager.GiveItem(3);
             }
