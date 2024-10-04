@@ -7,12 +7,15 @@ public class Spawner : MonoBehaviour
     public GameObject[] enemiesToSpawn;
     private GameObject prefab;
     [Space]
+    public bool isActive = true;
+    [Space]
     float timer;
     float _timer;
     public float timeToSpawn = 30;
 
     void Update()
     {
+        if(!isActive) { return; }
         prefab = enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)];
         timer += Time.deltaTime;
         _timer += Time.deltaTime;

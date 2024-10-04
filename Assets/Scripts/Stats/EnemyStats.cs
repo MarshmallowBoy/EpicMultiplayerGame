@@ -145,12 +145,14 @@ public class EnemyStats : MonoBehaviour
             if(myType == EnemyType.Slime)
             {
                 pstats.TakeDamage(eFinalDamage);
+                Debug.Log("Solid");
             }
             else if(myType == EnemyType.Blob)
             {
                 for(int i = 0; i < 3; i++)
                 {
                     pstats.TakeDamage(eFinalDamage / 3);
+                    Debug.Log("DoT");
                 }
             }
         }

@@ -90,6 +90,7 @@ public class PlayerStats : MonoBehaviour
         currentLevel++;
         currentExp -= expToNextLevel;
         StatUpdate();
+        LevelUpHeal();
         ExpCurve();
     }
 
