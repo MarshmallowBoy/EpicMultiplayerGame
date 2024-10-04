@@ -106,12 +106,10 @@ public class EnemyStats : MonoBehaviour
 
     private void RoyaltyCalculation()
     {
-        /*
         if(entityID != 20 && entityID != 21 && entityID != 42) { Debug.LogWarning(entityType + " is not supposed to be royal, please change this. It is " + "ID# " + entityID); isRoyal = false; return; }
         if(entityID == 20 || entityID == 21 || entityID == 42) { isRoyal = true; }
         if(damageRoll <= 2) { Debug.Log("damageRoll is too low for " + entityType + ", " + damageRoll + ", rerolling..."); damageRoll = Random.Range(3, 15); Debug.Log(entityType + " new damageRoll, " + damageRoll + ", ID = " + entityID); }
         if(healthRoll <= 9) { Debug.Log("healthRoll is too low for " + entityType + ", " + healthRoll + ", rerolling..."); healthRoll = Random.Range(15, 35); Debug.Log(entityType + " new healthRoll, " + healthRoll + ", ID = " + entityID); }
-        */
         if(isBoss == true) { enemyLevel = 55; Debug.Log(entityType + " is a Boss. It is ID# " + entityID); }
         else if(enemyLevel <= 34 && entityID == 20 || entityID == 21) { Debug.Log("levelRoll is too low for " + entityType + ", " + enemyLevel + ", rerolling..."); enemyLevel = Random.Range(35, 50); Debug.Log(entityType + " new level, " + enemyLevel + ", ID = " + entityID); }
        
