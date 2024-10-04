@@ -158,12 +158,15 @@ public class EnemyStats : MonoBehaviour
         {
             Debug.Log("Drops");
             //drops 1-2 slime goo with a 1% chance to drop a slime Gem and a 20% for Slime Soda
-            inventoryManager.GiveItem(2);
-            if (Random.Range(1, 5) == 1)
+            for(int i = 0; i < Random.Range(1,2); i++)
+            {
+                inventoryManager.GiveItem(2);
+            }
+            if(Random.Range(1, 5) == 1)
             {
                 inventoryManager.GiveItem(4);
             }
-            if (Random.Range(1, 100) == 1)
+            if(Random.Range(1, 100) == 1)
             {
                 inventoryManager.GiveItem(3);
             }
@@ -171,8 +174,13 @@ public class EnemyStats : MonoBehaviour
         else if(myType == EnemyType.Blob)
         {
             //drops 0-3 Blob fertalizer with a 10% chance for 1 slime goo
-            for (int i = 0; i < Random.Range(0, 3); i++) { 
+            for(int i = 0; i < Random.Range(0, 3); i++)
+            { 
                 inventoryManager.GiveItem(6);
+            }
+            if(Random.Range(1, 10) == 1)
+            {
+                inventoryManager.GiveItem(3);
             }
         }
     }

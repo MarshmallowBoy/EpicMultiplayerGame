@@ -5,32 +5,34 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] enemiesToSpawn;
-    [Space] 
+    private GameObject prefab;
+    [Space]
     float timer;
     float _timer;
     public float timeToSpawn = 30;
 
     void Update()
     {
+        prefab = enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)];
         timer += Time.deltaTime;
         _timer += Time.deltaTime;
         if(timer >= timeToSpawn)
         {
-            for (int i = Random.Range(0, enemiesToSpawn.Length); i < enemiesToSpawn.Length; i++)
-            {
-                if (_timer >= 3)
-                {
-                    DoSpawn();
-                }
-            }
+            DoSpawn();
             timer = 0;
         }
     }
 
     void DoSpawn()
     {
-        Instantiate(enemiesToSpawn[Random.Range(1, enemiesToSpawn.Length)]);
-        Debug.Log("Spawned an Enemy");
-        _timer = 0;
+        for(int i = Random.Range(0, enemiesToSpawn.Length); i < enemiesToSpawn.Length; i++)
+        {
+            if(_timer >= 1.5f)
+            {
+                Instantiate(prefab, transform.position, Quaternion.identity);
+                Debug.Log("Spawned an Enemy");
+                _timer = 0;
+            }
+        }
     }
 }
