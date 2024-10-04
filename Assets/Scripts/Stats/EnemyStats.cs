@@ -35,32 +35,38 @@ public class EnemyStats : MonoBehaviour
 
     private void Update()
     {
-        if (Drop == true)
+        if(Drop == true)
         {
             Drop = false;
             Drops();
+        }
+
+        if(eFinalHealth <= 0)
+        {
+            Drops();
+            Destroy(gameObject);
         }
     }
 
     public EnemyType myType;
 
-    void Awake()
+    private void Awake()
     {
         pstats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
         entityType = (myType + " " + entityName);
 
-        if (rollLevel == true)
+        if(rollLevel == true)
         {
             enemyLevel = Random.Range(1, 50);
             rollLevel = false;
             rollHealth = true;
         }
-        if (rollDamage == true)
+        if(rollDamage == true)
         {
             damageRoll = Random.Range(dR1, dR2);
             rollDamage = false;
         }
-        if (rollHealth == true)
+        if(rollHealth == true)
         {
             healthRoll = Random.Range(hR1, hR2);
             rollHealth = false;
@@ -68,12 +74,12 @@ public class EnemyStats : MonoBehaviour
 
         EnemyStatCalculation();
         
-        if (isBoss == true)
+        if(isBoss == true)
         {
             BossCalculation();
         }
 
-        if (isRoyal == true) 
+        if(isRoyal == true) 
         { 
             RoyaltyCalculation();
         }
@@ -83,12 +89,12 @@ public class EnemyStats : MonoBehaviour
 
     private void EnemyStatCalculation()
     {
-        if (myType == EnemyType.Slime)
+        if(myType == EnemyType.Slime)
         {
             eFinalDamage = damageRoll + (2 * enemyLevel);
             eFinalHealth = eBaseHealth + (healthRoll * enemyLevel);
         }
-        else if (myType == EnemyType.Blob)
+        else if(myType == EnemyType.Blob)
         {
             eFinalDamage = damageRoll + (5 * (enemyLevel + 3));
             eFinalHealth = eBaseHealth + (healthRoll * (enemyLevel + 2));
@@ -144,41 +150,35 @@ public class EnemyStats : MonoBehaviour
             eFinalHealth -= pstats.playerDamage;
             Destroy(other.gameObject);
         }
-        
-        if(eFinalHealth >= 0)
-        {
-            Drops();
-            Destroy(gameObject);
-        }
     }
 
     private void Drops()
     {
-        if (myType == EnemyType.Slime)
+        if(myType == EnemyType.Slime)
         {
             Debug.Log("Drops");
             //drops 1-2 slime goo with a 1% chance to drop a slime Gem and a 20% for Slime Soda
-            for (int i = 0; i < Random.Range(1,2); i++)
+            for(int i = 0; i < Random.Range(1,2); i++)
             {
                 inventoryManager.GiveItem(2);
             }
-            if (Random.Range(1, 5) == 1)
+            if(Random.Range(1, 5) == 1)
             {
                 inventoryManager.GiveItem(4);
             }
-            if (Random.Range(1, 100) == 1)
+            if(Random.Range(1, 100) == 1)
             {
                 inventoryManager.GiveItem(3);
             }
         }
-        else if (myType == EnemyType.Blob)
+        else if(myType == EnemyType.Blob)
         {
             //drops 0-3 Blob fertalizer with a 10% chance for 1 slime goo
-            for (int i = 0; i < Random.Range(0, 3); i++)
+            for(int i = 0; i < Random.Range(0, 3); i++)
             { 
                 inventoryManager.GiveItem(6);
             }
-            if (Random.Range(1, 10) == 1)
+            if(Random.Range(1, 10) == 1)
             {
                 inventoryManager.GiveItem(3);
             }
