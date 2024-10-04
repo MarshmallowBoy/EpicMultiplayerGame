@@ -25,7 +25,7 @@ public class EnemyStats : MonoBehaviour
     public int eFinalDamage;
     public int eFinalHealth = 1;
     public int eBaseHealth = 10;
-    private PlayerStats pstats;
+    [SerializeField] private PlayerStats pstats;
     public int entityID = 0;
     [SerializeField] private string entityName = "PH";
     [SerializeField] private string entityType = "PH";
@@ -142,7 +142,17 @@ public class EnemyStats : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            pstats.TakeDamage(eFinalDamage);
+            if(myType == EnemyType.Slime)
+            {
+                pstats.TakeDamage(eFinalDamage);
+            }
+            else if(myType == EnemyType.Blob)
+            {
+                for(int i = 0; i < 3; i++)
+                {
+                    pstats.TakeDamage(eFinalDamage / 3);
+                }
+            }
         }
 
         if(other.tag == "Bullet")
