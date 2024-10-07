@@ -7,56 +7,99 @@ public class WanderAI : MonoBehaviour
 {
     private int moveSpeed = 10;
     [Space]
+    [SerializeField] float chaseDistance = 10;
+    [SerializeField] float tempHomeDistance = 1;
     private float timer = 0;
     public float timeToMove = 10;
-    public float timeToStop = 5;
-    public float timeToJump = Random.Range(1, 7);
+    public float timeToStop = 7;
+    public float timeToJump;
     [Space]
+    [SerializeField] bool playerInSight = false;
     private bool isMoving = false;
 
-    NavMeshAgent agent;
+    [SerializeField] GameObject player;
+    public NavMeshAgent agent;
+    public float range;
+
+    public Transform centerPoint;
+
+    Vector3 home;
+    Vector3 tempHome;
+
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        timeToJump = Random.Range(1, 7);
+        home = transform.position;
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player").gameObject;
+        }
     }
 
     private void Update()
     {
-        timer = Time.time;
-        if(agent.velocity.x > 0 && isMoving == false || agent.velocity.z > 0 && isMoving == false)
+        Vector3 moveDir = player.transform.position - transform.position;
+        timer = Time.deltaTime;
+        if (agent.remainingDistance <= agent.stoppingDistance && timer >= timeToMove)
         {
-            isMoving = true;
+            Vector3 point;
+            if(RandomPoint(centerPoint.position, range, out point))
+            {
+                Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f);
+                agent.SetDestination(point);
+            }
         }
-
-        if(timer >= timeToJump)
+        if (moveDir.magnitude < chaseDistance)
         {
-            Jump(Random.Range(1, 20));
+            playerInSight = true;
         }
-
-        if(isMoving == false && timer >= timeToMove)
+        else if (moveDir.magnitude > chaseDistance)
         {
-            timer = 0;
-            Wander();
+            playerInSight = false;
         }
-
-        else if(isMoving == true && timer >= timeToStop)
+        if (playerInSight == true)
         {
-            timer = 0;
-            isMoving = false;
+            if (tempHome.x == 0)
+            {
+                tempHome = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            }
+            agent.destination = player.transform.position;
+        }
+        else
+        {
+            agent.destination = tempHome;
+            if (moveDir.magnitude <= tempHomeDistance)
+            {
+                Vector3 _point;
+                if (RandomPoint(centerPoint.position, range, out _point))
+                {
+                    agent.SetDestination(_point);
+                }
+                tempHome.x = 0;
+                tempHome.y = 0;
+                tempHome.z = 0;
+            }
         }
     }
 
-    private void Wander()
+    bool RandomPoint(Vector3 center, float range, out Vector3 result)
     {
-        float wanderZ = Random.Range(1, 10);
-        float wanderX = Random.Range(1, 10);
-
+        Vector3 randomPoint = center + Random.insideUnitSphere * range;
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            result = hit.position;
+            return true;
+        }
+        result = Vector3.zero;
+        return false;
     }
 
     private void Jump(float power)
     {
         //jumps
-        
+        power = Random.Range(0, 10);
     }
 }
