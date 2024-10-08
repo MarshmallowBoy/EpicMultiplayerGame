@@ -419,10 +419,10 @@ GameObject:
   - component: {fileID: 8928218547285049506}
   - component: {fileID: 2501083847076065040}
   - component: {fileID: 3671474888449821657}
-  - component: {fileID: 8833491374419185540}
   - component: {fileID: 4605030262260207355}
   - component: {fileID: 320871866561788157}
   - component: {fileID: 7067685264504673459}
+  - component: {fileID: 2676139128043117156}
   m_Layer: 0
   m_Name: BlobKing
   m_TagString: Blob
@@ -502,22 +502,10 @@ MonoBehaviour:
   entityName: King
   entityType: PH
   inventoryManager: {fileID: 0}
+  DeathAnimation: {fileID: 2791641269456249720, guid: 67dbcd76dd362cd418f68c63c6291e67,
+    type: 3}
   Drop: 0
   myType: 1
---- !u!114 &8833491374419185540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7748528756801680212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  chaseDistance: 10
 --- !u!64 &4605030262260207355
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -589,3 +577,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2676139128043117156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7748528756801680212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df5c292c8508048a034bce0ba4b408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 10
+  tempHomeDistance: 1
+  timeToMove: 10
+  timeToStop: 7
+  timeToJump: 0
+  playerInSight: 0
+  player: {fileID: 0}
+  agent: {fileID: 0}
+  range: 0
+  centerPoint: {fileID: 0}

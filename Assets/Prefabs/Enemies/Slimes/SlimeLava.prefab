@@ -186,7 +186,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -205,10 +205,10 @@ GameObject:
   - component: {fileID: 1259829410076446774}
   - component: {fileID: 1676236313440668252}
   - component: {fileID: 686966100798790368}
-  - component: {fileID: 8100906536823476338}
   - component: {fileID: 5606894725077517039}
   - component: {fileID: 8322200193891147134}
   - component: {fileID: 7208694748436075370}
+  - component: {fileID: 2580066256300500562}
   m_Layer: 0
   m_Name: SlimeLava
   m_TagString: Slime
@@ -288,22 +288,10 @@ MonoBehaviour:
   entityName: Lava
   entityType: PH
   inventoryManager: {fileID: 0}
+  DeathAnimation: {fileID: 2791641269456249720, guid: 67dbcd76dd362cd418f68c63c6291e67,
+    type: 3}
   Drop: 0
   myType: 0
---- !u!114 &8100906536823476338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386299539034740712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  chaseDistance: 10
 --- !u!64 &5606894725077517039
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -375,6 +363,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2580066256300500562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386299539034740712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df5c292c8508048a034bce0ba4b408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 10
+  tempHomeDistance: 1
+  timeToMove: 10
+  timeToStop: 7
+  timeToJump: 0
+  playerInSight: 0
+  player: {fileID: 0}
+  agent: {fileID: 0}
+  range: 0
+  centerPoint: {fileID: 0}
 --- !u!1 &3269935165950407123
 GameObject:
   m_ObjectHideFlags: 0

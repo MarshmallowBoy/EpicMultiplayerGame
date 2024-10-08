@@ -161,10 +161,10 @@ GameObject:
   - component: {fileID: 728330003775453710}
   - component: {fileID: 1047784079647655755}
   - component: {fileID: 8798519844946837865}
-  - component: {fileID: 6425147103415101430}
   - component: {fileID: 5452107369043199114}
   - component: {fileID: 4387999843063258216}
   - component: {fileID: 7235834101822009153}
+  - component: {fileID: 6211207604886200313}
   m_Layer: 0
   m_Name: SlimeQueen
   m_TagString: Slime
@@ -244,22 +244,10 @@ MonoBehaviour:
   entityName: Queen
   entityType: PH
   inventoryManager: {fileID: 0}
+  DeathAnimation: {fileID: 2791641269456249720, guid: 67dbcd76dd362cd418f68c63c6291e67,
+    type: 3}
   Drop: 0
   myType: 0
---- !u!114 &6425147103415101430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3487342027997507882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  chaseDistance: 10
 --- !u!64 &5452107369043199114
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -331,6 +319,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6211207604886200313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487342027997507882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df5c292c8508048a034bce0ba4b408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 10
+  tempHomeDistance: 1
+  timeToMove: 10
+  timeToStop: 7
+  timeToJump: 0
+  playerInSight: 0
+  player: {fileID: 0}
+  agent: {fileID: 0}
+  range: 0
+  centerPoint: {fileID: 0}
 --- !u!1 &3816115155457794644
 GameObject:
   m_ObjectHideFlags: 0

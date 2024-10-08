@@ -35,6 +35,9 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+        character = GetComponent<Character>();
+        anim2 = GameObject.Find("Canvas").GetComponent<Animator>();
         Spawningpoint = transform.position;
     }
 
@@ -57,7 +60,7 @@ public class PlayerStats : MonoBehaviour
             ExpCurve();
         }
 
-        if (playerHealth <= 0)
+        if(playerHealth <= 0)
         {
             character.enabled = false;
             StartCoroutine(Respawn());

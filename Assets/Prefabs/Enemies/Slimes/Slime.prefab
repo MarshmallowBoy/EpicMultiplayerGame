@@ -280,10 +280,10 @@ GameObject:
   - component: {fileID: 1969394560423301101}
   - component: {fileID: 6485478313467669897}
   - component: {fileID: 2222627143606980301}
-  - component: {fileID: 2626483923455348067}
   - component: {fileID: 2520657621868174674}
   - component: {fileID: 5554518972311191564}
   - component: {fileID: 51158316428719637}
+  - component: {fileID: 6755739550811211391}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Slime
@@ -363,22 +363,10 @@ MonoBehaviour:
   entityName: Average
   entityType: PH
   inventoryManager: {fileID: 0}
+  DeathAnimation: {fileID: 2791641269456249720, guid: 67dbcd76dd362cd418f68c63c6291e67,
+    type: 3}
   Drop: 0
   myType: 0
---- !u!114 &2626483923455348067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7734283155777311823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30961f80b004e9642856ba430c918598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  chaseDistance: 10
 --- !u!64 &2520657621868174674
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -450,6 +438,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6755739550811211391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7734283155777311823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74df5c292c8508048a034bce0ba4b408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 10
+  tempHomeDistance: 1
+  timeToMove: 10
+  timeToStop: 7
+  timeToJump: 0
+  playerInSight: 0
+  player: {fileID: 0}
+  agent: {fileID: 0}
+  range: 0
+  centerPoint: {fileID: 0}
 --- !u!1 &8307794991834870707
 GameObject:
   m_ObjectHideFlags: 0

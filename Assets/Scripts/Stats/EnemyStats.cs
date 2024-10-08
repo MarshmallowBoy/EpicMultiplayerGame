@@ -30,7 +30,7 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private string entityName = "PH";
     [SerializeField] private string entityType = "PH";
     public InventoryManager inventoryManager;
-
+    public GameObject DeathAnimation;
     public bool Drop = false;
 
     private void Update()
@@ -44,6 +44,7 @@ public class EnemyStats : MonoBehaviour
         if(eFinalHealth <= 0)
         {
             Drops();
+            Instantiate(DeathAnimation, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
