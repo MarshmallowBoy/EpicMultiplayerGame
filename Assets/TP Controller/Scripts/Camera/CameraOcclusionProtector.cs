@@ -164,12 +164,12 @@ public class CameraOcclusionProtector : MonoBehaviour
 
     private void Update()
     {
-        distanceToTarget += Input.mouseScrollDelta.y * scaling;
-        if(distanceToTarget + (Input.mouseScrollDelta.y * scaling) > MAX_DISTANCE_TO_PLAYER)
+        distanceToTarget += -Input.mouseScrollDelta.y * scaling;
+        if(distanceToTarget + (-Input.mouseScrollDelta.y * scaling) > MAX_DISTANCE_TO_PLAYER)
         {
             distanceToTarget = MAX_DISTANCE_TO_PLAYER;
         }
-        if (distanceToTarget + (Input.mouseScrollDelta.y * scaling) < MIN_DISTANCE_TO_PLAYER)
+        if (distanceToTarget + (-Input.mouseScrollDelta.y * scaling) < MIN_DISTANCE_TO_PLAYER)
         {
             distanceToTarget = MIN_DISTANCE_TO_PLAYER;
         }
