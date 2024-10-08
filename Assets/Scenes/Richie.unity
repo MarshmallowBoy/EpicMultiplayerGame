@@ -4188,6 +4188,11 @@ PrefabInstance:
       propertyPath: m_WalkableMask
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 817526873861194771, guid: 5f609def8de85a74b9b8fe127f1bb64b,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3691354643936144604, guid: 5f609def8de85a74b9b8fe127f1bb64b,
         type: 3}
       propertyPath: m_UseGravity

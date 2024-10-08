@@ -40,8 +40,8 @@ public class WanderAI : MonoBehaviour
 
     private void Update()
     {
+        //timer = Time.deltaTime;
         Vector3 moveDir = player.transform.position - transform.position;
-        timer = Time.deltaTime;
         if (agent.remainingDistance <= agent.stoppingDistance && timer >= timeToMove)
         {
             Vector3 point;
@@ -67,13 +67,13 @@ public class WanderAI : MonoBehaviour
             }
             agent.destination = player.transform.position;
         }
-        else
+        else if (playerInSight == false)
         {
             agent.destination = tempHome;
             if (moveDir.magnitude <= tempHomeDistance)
             {
                 Vector3 _point;
-                if (RandomPoint(centerPoint.position, range, out _point))
+                if(RandomPoint(centerPoint.position, range, out _point))
                 {
                     agent.SetDestination(_point);
                 }

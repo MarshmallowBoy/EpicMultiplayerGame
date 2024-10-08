@@ -25,9 +25,18 @@ public class PlayerStats : MonoBehaviour
     public int Gold = 0;
     protected bool lvlCheck = true;
 
+    public Animator animator;
+    public Character character;
+    public Animator anim2;
+    public Vector3 Spawningpoint;
     TrainerButtons statUp;
 
     //EXP req from 1-50(1275) 95850 (was 164150 (was 170150 (was 446250)))
+
+    private void Awake()
+    {
+        Spawningpoint = transform.position;
+    }
 
     private void Update()
     {
@@ -37,6 +46,8 @@ public class PlayerStats : MonoBehaviour
         {
             StatUpdate();
         }
+        animator.SetFloat("Health", playerHealth);
+
         if (currentLevel >= playerMaxLevel)
         {
             expToNextLevel = 20000000;
@@ -44,6 +55,12 @@ public class PlayerStats : MonoBehaviour
         else if (currentLevel != playerMaxLevel)
         {
             ExpCurve();
+        }
+
+        if (playerHealth <= 0)
+        {
+            character.enabled = false;
+            StartCoroutine(Respawn());
         }
     }
 
@@ -114,9 +131,39 @@ public class PlayerStats : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Trainer" && statUp == null)
+        if (other.tag == "Trainer" && statUp == null)
         {
             statUp = other.GetComponent<TrainerButtons>();
         }
+        /*
+        if(other.tag == "Slime")
+        {
+            EnemyStats eStats;
+            eStats = other.GetComponent<EnemyStats>();
+            playerHealth -= eStats.eFinalDamage - resistance;
+            Debug.Log($"did {eStats.eFinalDamage - resistance} damage");
+        }
+        else if(other.tag == "Blob")
+        {
+            EnemyStats eStats;
+            eStats = other.GetComponent<EnemyStats>();
+            for (int i = 0; i < 3; i++)
+            {
+                playerHealth -= (eStats.eFinalDamage/3)  - (resistance/3);
+            }  
+            Debug.Log($"did {eStats.eFinalDamage - resistance} damage");
+        }
+        */
+    }
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(3);
+        anim2.Play("Fade");
+        yield return new WaitForSeconds(1);
+        //transform.position = new Vector3(192.5f, 100f, 276.35f);
+        transform.position = Spawningpoint;
+        character.enabled = true;
+        playerHealth = playerMaxHealth;
     }
 }
