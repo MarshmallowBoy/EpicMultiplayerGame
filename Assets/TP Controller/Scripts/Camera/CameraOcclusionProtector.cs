@@ -27,6 +27,10 @@ public class CameraOcclusionProtector : MonoBehaviour
     private float distanceToTarget = 2.5f; // In meters
 
     [SerializeField]
+    [Tooltip("How much the distance to target can change")]
+    private float scaling;
+
+    [SerializeField]
     [Range(MIN_NEAR_CLIP_PLANE_EXTENT_MULTIPLIER, MAX_NEAR_CLIP_PLANE_EXTENT_MULTIPLIER)]
     [Tooltip("Higher values ensure better occlusion protection, but decrease the distance between the camera and the target")]
     private float nearClipPlaneExtentMultiplier = 1.2f;
@@ -156,6 +160,19 @@ public class CameraOcclusionProtector : MonoBehaviour
         nearClipPlanePoints.LowerRight += this.transform.forward * this.camera.nearClipPlane;
 
         return nearClipPlanePoints;
+    }
+
+    private void Update()
+    {
+        distanceToTarget += Input.mouseScrollDelta.y * scaling;
+        if(distanceToTarget + (Input.mouseScrollDelta.y * scaling) > MAX_DISTANCE_TO_PLAYER)
+        {
+            distanceToTarget = MAX_DISTANCE_TO_PLAYER;
+        }
+        if (distanceToTarget + (Input.mouseScrollDelta.y * scaling) < MIN_DISTANCE_TO_PLAYER)
+        {
+            distanceToTarget = MIN_DISTANCE_TO_PLAYER;
+        }
     }
 
     //private void OnDrawGizmos()
