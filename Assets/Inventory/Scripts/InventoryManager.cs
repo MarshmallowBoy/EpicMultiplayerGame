@@ -98,11 +98,14 @@ public class InventoryManager : MouseInteract
     {
         for (int i = 0; i < ContainerSlots.Length; i++)
         {
-            if (ContainerSlots[i].transform.childCount > 0)
+            if (ContainerSlots[i].transform.childCount <= 0)
             {
                 continue;
             }
-            Destroy(BobbleIndex[id]);
+            if (ContainerSlots[i].GetComponentInChildren<InventorySystemIdentification>().ID == id)
+            {
+                Destroy(ContainerSlots[i].GetComponentInChildren<Transform>().gameObject);
+            }
             return;
         }
     }

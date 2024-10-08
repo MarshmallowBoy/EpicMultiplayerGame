@@ -17,7 +17,7 @@ public class VendorSelling : MonoBehaviour
     public int grainPrice = 2;
     public int cookiePrice = 7;
 
-    void Start()
+    void Awake()
     {
         iManager = GameObject.FindWithTag("Inventory").GetComponent<InventoryManager>();
         pStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
