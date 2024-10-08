@@ -94,4 +94,16 @@ public class InventoryManager : MouseInteract
         }
     }
 
+    public void RemoveItem(int id)
+    {
+        for (int i = 0; i < ContainerSlots.Length; i++)
+        {
+            if (ContainerSlots[i].transform.childCount > 0)
+            {
+                continue;
+            }
+            Destroy(BobbleIndex[id]);
+            return;
+        }
+    }
 }

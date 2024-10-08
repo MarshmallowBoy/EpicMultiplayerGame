@@ -33,6 +33,8 @@ public class EnemyStats : MonoBehaviour
     public GameObject DeathAnimation;
     public bool Drop = false;
 
+    public EnemyType myType;
+
     private void Update()
     {
         if(Drop == true)
@@ -48,8 +50,6 @@ public class EnemyStats : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    public EnemyType myType;
 
     private void Awake()
     {
@@ -152,6 +152,7 @@ public class EnemyStats : MonoBehaviour
             {
                 for(int i = 0; i < 3; i++)
                 {
+
                     pstats.TakeDamage(eFinalDamage / 3);
                     Debug.Log("DoT");
                 }

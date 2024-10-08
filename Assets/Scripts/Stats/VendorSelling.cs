@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VendorSelling : MonoBehaviour
@@ -25,36 +26,43 @@ public class VendorSelling : MonoBehaviour
     public void SellSlimeGoo()
     {
         //remove a slime goo(ID 2) if you have at least one
+        iManager.RemoveItem(2);
         pStats.Gold += slimeGooPrice;
     }
     public void SellSlimeGem()
     {
         //remove a slime gem(ID 3) if you have at least one
+        iManager.RemoveItem(3);
         pStats.Gold += slimeGemPrice;
     }
     public void SellSlimeSoda()
     {
         //remove a slime soda(ID 4) if you have at least one
+        iManager.RemoveItem(4);
         pStats.Gold += slimeSodaPrice;
     }
     public void SellSlimePurificationCatalyst()
     {
         //remove a slime purification catalyst(ID 5) if you have at least one
+        iManager.RemoveItem(5);
         pStats.Gold += slimePurificationCatalystPrice;
     }
     public void SellBlobFertalizer()
     {
         //remove a blob fertalizer(ID 6) if you have at least one
+        iManager.RemoveItem(6);
         pStats.Gold += blobFertalizerPrice;
     }
     public void SellGrain()
     {
-        //remove a grain(ID 9) if you have at least one
+        //remove a grain(ID 1) if you have at least one
+        iManager.RemoveItem(1);
         pStats.Gold += grainPrice;
     }
     public void SellCookie()
     {
-        //remove a Cookie(ID10) if you have at least one, Be Sad D:
+        //remove a Cookie(ID 7) if you have at least one, Be Sad D:
+        iManager.RemoveItem(7);
         pStats.Gold += cookiePrice;
     }
 }
