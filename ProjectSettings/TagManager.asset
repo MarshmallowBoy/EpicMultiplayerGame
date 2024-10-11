@@ -9,6 +9,7 @@ TagManager:
   - Inventory
   - Slime
   - Blob
+  - NPC
   layers:
   - Default
   - TransparentFX

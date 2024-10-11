@@ -3,6 +3,7 @@ using UnityEngine;
 public class InventoryController : MonoBehaviour
 {
     public GameObject Inventory;
+    public GameObject Dialogue;
     public CameraController CameraController;
     public Character Char;
     void Update()
@@ -10,16 +11,17 @@ public class InventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             Inventory.SetActive(!Inventory.activeInHierarchy);
-            if (Inventory.activeInHierarchy)
-            {
-                Cursor.lockState = CursorLockMode.Confined;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
+            
             CameraController.enabled = !Inventory.activeInHierarchy;
             Char.enabled = !Inventory.activeInHierarchy;
+        }
+        if (Inventory.activeInHierarchy || Dialogue.activeInHierarchy)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

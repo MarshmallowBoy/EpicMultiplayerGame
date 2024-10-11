@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class WanderAI : MonoBehaviour
 {
-    private int moveSpeed = 10;
+    //private int moveSpeed = 10;
     [Space]
     [SerializeField] float chaseDistance = 10;
     [SerializeField] float tempHomeDistance = 1;
@@ -15,7 +15,7 @@ public class WanderAI : MonoBehaviour
     public float timeToJump;
     [Space]
     [SerializeField] bool playerInSight = false;
-    private bool isMoving = false;
+    //private bool isMoving = false;
 
     [SerializeField] GameObject player;
     public NavMeshAgent agent;

@@ -2612,6 +2612,7 @@ GameObject:
   - component: {fileID: 8888240153300774268}
   - component: {fileID: 9113698077527694561}
   - component: {fileID: 4945153409450689526}
+  - component: {fileID: 499805237804386332}
   m_Layer: 2
   m_Name: Jeffery
   m_TagString: Player
@@ -2735,6 +2736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 0}
+  Dialogue: {fileID: 0}
   CameraController: {fileID: 0}
   Char: {fileID: 2847829663026901020}
 --- !u!114 &9113698077527694561
@@ -2777,3 +2779,18 @@ CapsuleCollider:
   m_Height: 23
   m_Direction: 1
   m_Center: {x: 0, y: 12, z: 0}
+--- !u!114 &499805237804386332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118142732328607473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e02dd753392b54c82c62fc52c8befb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  Conversation: {fileID: 0}
+  ConversationDialogue: {fileID: 0}

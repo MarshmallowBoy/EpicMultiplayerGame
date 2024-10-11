@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
 
         for (int i = Start; i < End; i+=Delta)
         {
-            ripple.Emit(transform.position + ripple.transform.forward * 1.15f, ripple.transform.forward * Speed, Size, Lifetime, Color.white);
+            //ripple.Emit(transform.position + ripple.transform.forward * 1.15f, ripple.transform.forward * Speed, Size, Lifetime, Color.white);
             ripple.transform.Rotate(Vector3.up * Delta, Space.World);
         }
     }
@@ -107,7 +107,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.layer == 4)
         {
             //CreateRipple(-180, 180, 2, 5, 3f, 3);
-            ripple.Emit(transform.position, Vector3.zero, 5, 0.1f, Color.white);
+            //ripple.Emit(transform.position, Vector3.zero, 5, 0.1f, Color.white);
         }
     }
     /*
@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
         if(other.gameObject.layer == 4)
         {
             //CreateRipple(-180, 180, 2, 5, 3f, 3);
-            ripple.Emit(transform.position, Vector3.zero, 5, 0.1f, Color.white);
+            //ripple.Emit(transform.position, Vector3.zero, 5, 0.1f, Color.white);
         }
     }
 }
