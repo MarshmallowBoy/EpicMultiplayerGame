@@ -10,6 +10,7 @@ TagManager:
   - Slime
   - Blob
   - NPC
+  - Interactable
   layers:
   - Default
   - TransparentFX

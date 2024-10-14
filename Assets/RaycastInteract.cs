@@ -20,6 +20,10 @@ public class RayCastInteract : MonoBehaviour
                     Conversation.NPC = hit.transform.GetComponent<ConversationNPC>();
                     Conversation.InitializeConversation();
                 }
+                if (hit.transform.CompareTag("Interactable"))
+                {
+                    hit.transform.GetComponent<WhenInteracted>().unityEvent.Invoke();
+                }
             }
         }
     }
