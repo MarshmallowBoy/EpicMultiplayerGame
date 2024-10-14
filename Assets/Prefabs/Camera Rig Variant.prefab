@@ -73,6 +73,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11473368, guid: 80844b2319340044da27db99208a9eac, type: 3}
+      propertyPath: scaling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473368, guid: 80844b2319340044da27db99208a9eac, type: 3}
       propertyPath: ignoreLayerMask.m_Bits
       value: 4
       objectReference: {fileID: 0}
