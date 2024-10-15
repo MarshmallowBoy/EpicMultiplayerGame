@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 1625133643860706757}
   m_Layer: 5
   m_Name: Trainer
-  m_TagString: Untagged
+  m_TagString: Trainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
