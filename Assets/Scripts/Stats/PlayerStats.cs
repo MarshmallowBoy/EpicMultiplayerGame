@@ -35,6 +35,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        statUp = GameObject.FindWithTag("Trainer").GetComponent<TrainerButtons>();
         animator = GetComponent<Animator>();
         character = GetComponent<Character>();
         anim2 = GameObject.Find("Canvas").GetComponent<Animator>();
@@ -134,10 +135,6 @@ public class PlayerStats : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Trainer" && statUp == null)
-        {
-            statUp = other.GetComponent<TrainerButtons>();
-        }
         /*
         if(other.tag == "Slime")
         {
