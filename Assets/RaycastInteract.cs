@@ -22,7 +22,7 @@ public class RayCastInteract : MonoBehaviour
                 }
                 if (hit.transform.CompareTag("Interactable"))
                 {
-                    hit.transform.GetComponent<WhenInteracted>().unityEvent.Invoke();
+                    hit.transform.GetComponent<WhenInteracted>().Interact();
                 }
             }
         }

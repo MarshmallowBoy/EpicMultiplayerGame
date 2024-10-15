@@ -9,6 +9,13 @@ public class InventoryManager : MouseInteract
     public GameObject[] HotbarSlots;
     public GameObject[] ContainerSlots;
 
+    public static InventoryManager Instance { get; private set; }
+
+    private void Start()
+    {
+        Instance = this;
+    }
+
     void Update()
     {
         /*

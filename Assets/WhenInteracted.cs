@@ -5,7 +5,8 @@ using UnityEngine.Events;
 public class WhenInteracted : MonoBehaviour
 {
     public UnityEvent unityEvent;
-
+    public float coolDown = 0;
+    float nextTimeToFire = 0;
     private void Start()
     {
         if (unityEvent == null)
@@ -16,6 +17,10 @@ public class WhenInteracted : MonoBehaviour
 
     public void Interact()
     {
-        unityEvent.Invoke();
+        if (nextTimeToFire < Time.time)
+        {
+            nextTimeToFire = Time.time + coolDown;
+            unityEvent.Invoke();
+        }
     }
 }
