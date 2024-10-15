@@ -111,7 +111,10 @@ public class InventoryManager : MouseInteract
             }
             if (ContainerSlots[i].GetComponentInChildren<InventorySystemIdentification>().ID == id)
             {
-                Destroy(ContainerSlots[i].GetComponentInChildren<Transform>().gameObject);
+                foreach(Transform child in ContainerSlots[i].transform)
+                {
+                    Destroy(child.gameObject);
+                }
             }
             return;
         }
