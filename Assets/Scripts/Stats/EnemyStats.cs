@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public enum EnemyType { Slime, Blob }
@@ -32,11 +33,14 @@ public class EnemyStats : MonoBehaviour
     public InventoryManager inventoryManager;
     public GameObject DeathAnimation;
     public bool Drop = false;
+    float timer;
 
     public EnemyType myType;
 
     private void Update()
     {
+        timer += Time.deltaTime;
+
         if(Drop == true)
         {
             Drop = false;
@@ -143,18 +147,21 @@ public class EnemyStats : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if(myType == EnemyType.Slime)
+            if (myType == EnemyType.Slime)
             {
                 pstats.TakeDamage(eFinalDamage);
                 Debug.Log("Solid");
             }
-            else if(myType == EnemyType.Blob)
+            else if (myType == EnemyType.Blob)
             {
-                for(int i = 0; i < 3; i++)
+                if(timer >= 1)
                 {
-
-                    pstats.TakeDamage(eFinalDamage / 3);
-                    Debug.Log("DoT");
+                    for (int i = 0; i < 3; i++ )
+                    {
+                        pstats.TakeDamage(eFinalDamage / 3);
+                        Debug.Log("DoT");
+                        timer = 0;
+                    }
                 }
             }
         }
@@ -168,27 +175,28 @@ public class EnemyStats : MonoBehaviour
 
     private void Drops()
     {
-        if(myType == EnemyType.Slime)
+        if (myType == EnemyType.Slime)
         {
             Debug.Log("Drops");
             //drops 1-2 slime goo with a 1% chance to drop a slime Gem and a 20% for Slime Soda
-            for(int i = 0; i < Random.Range(1,2); i++)
+            for (int i = 0; i < Random.Range(1, 2); i++)
             {
                 inventoryManager.GiveItem(2);
             }
-            if(Random.Range(1, 5) == 1)
+            if (Random.Range(1, 5) == 1)
             {
                 inventoryManager.GiveItem(4);
             }
-            if(Random.Range(1, 100) == 1)
+            if (Random.Range(1, 100) == 1)
             {
                 inventoryManager.GiveItem(3);
             }
+            Instantiate(DeathAnimation, transform.position, Quaternion.identity);
         }
-        else if(myType == EnemyType.Blob)
+        else if (myType == EnemyType.Blob)
         {
             //drops 0-3 Blob fertalizer with a 10% chance for 1 slime goo
-            for(int i = 0; i < Random.Range(0, 3); i++)
+            for (int i = 0; i < Random.Range(0, 3); i++)
             { 
                 inventoryManager.GiveItem(6);
             }
@@ -196,6 +204,7 @@ public class EnemyStats : MonoBehaviour
             {
                 inventoryManager.GiveItem(3);
             }
+            Instantiate(DeathAnimation, transform.position, Quaternion.identity);
         }
     }
 }

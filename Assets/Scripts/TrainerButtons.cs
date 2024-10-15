@@ -31,26 +31,26 @@ public class TrainerButtons : MonoBehaviour
     public void ResisanceIncrease()
     {
         if(playerStats.Gold <= resistanceCost) { return; }
-        else if(playerStats.Gold >= resistanceCost) { playerStats.IncreaseResistance(rAmountToIncrease); }
+        else if(playerStats.Gold >= resistanceCost) { playerStats.IncreaseResistance(rAmountToIncrease); playerStats.Gold -= resistanceCost; }
         if (resistanceCost < rCostMax) { resistanceCost += rCostScaler; }
     }
     public void HealthIncrease()
     {
         if(playerStats.Gold <= healthCost) { return; }
-        else if(playerStats.Gold >= healthCost) { playerStats.IncreaseHealth(hAmountToIncrease); }
+        else if(playerStats.Gold >= healthCost) { playerStats.IncreaseHealth(hAmountToIncrease); playerStats.Gold -= healthCost; }
         if(healthCost < hCostMax) { healthCost += hCostScaler; }
     }
 
     public void DamageIncrease()
     {
         if (playerStats.Gold <= damageCost) { return; }
-        else if (playerStats.Gold >= damageCost) { playerStats.IncreaseDamage(dAmountToIncrease); }
+        else if (playerStats.Gold >= damageCost) { playerStats.IncreaseDamage(dAmountToIncrease); playerStats.Gold -= damageCost; }
         if (damageCost < dCostMax) { damageCost += dCostScaler; }
     }
 
     public void MaxLevelIncrease()
     {
         if (playerStats.Gold <= levelCost) { return; }
-        else if (playerStats.Gold >= levelCost) { playerStats.IncreaseMaxLevel(lAmountToIncrease); }
+        else if (playerStats.Gold >= levelCost) { playerStats.IncreaseMaxLevel(lAmountToIncrease); playerStats.Gold -= levelCost; }
     }
 }

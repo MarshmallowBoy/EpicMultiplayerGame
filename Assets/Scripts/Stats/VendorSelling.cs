@@ -25,9 +25,11 @@ public class VendorSelling : MonoBehaviour
 
     public void SellSlimeGoo()
     {
+        Debug.Log("Hai");
         //remove a slime goo(ID 2) if you have at least one
         iManager.RemoveItem(2);
         pStats.Gold += slimeGooPrice;
+        Debug.Log("Bai");
     }
     public void SellSlimeGem()
     {
