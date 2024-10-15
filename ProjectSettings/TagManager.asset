@@ -11,6 +11,7 @@ TagManager:
   - Blob
   - NPC
   - Interactable
+  - Trainer
   layers:
   - Default
   - TransparentFX

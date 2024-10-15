@@ -19,7 +19,7 @@ public class VendorSelling : MonoBehaviour
 
     void Awake()
     {
-        iManager = GameObject.FindWithTag("Inventory").GetComponent<InventoryManager>();
+        iManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         pStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
     }
 
@@ -28,8 +28,8 @@ public class VendorSelling : MonoBehaviour
         Debug.Log("Hai");
         //remove a slime goo(ID 2) if you have at least one
         iManager.RemoveItem(2);
-        pStats.Gold += slimeGooPrice;
         Debug.Log("Bai");
+        pStats.Gold += slimeGooPrice;
     }
     public void SellSlimeGem()
     {
