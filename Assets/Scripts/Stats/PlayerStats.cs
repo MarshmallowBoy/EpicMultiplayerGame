@@ -6,9 +6,9 @@ public class PlayerStats : MonoBehaviour
 {
     public int hMod = 0;
     public int playerHealth = 25;
+    public int playerMaxHealth = 25;
     [SerializeField] int playerBaseHealth = 25;
     [SerializeField] int playerLvl1Health = 25;
-    [SerializeField] int playerMaxHealth = 25;
     [SerializeField] int playerHealthPerLevel = 10;
     [Space]
     [SerializeField] int currentLevel = 1;
@@ -122,7 +122,7 @@ public class PlayerStats : MonoBehaviour
 
     void StatUpdate()
     {
-        playerBaseHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
+        playerBaseHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1)) + hMod;
         playerMaxHealth = playerBaseHealth + (playerHealthPerLevel * (currentLevel - 1)) + hMod;
         baseDamage = currentLevel;
         playerDamage = baseDamage + dMod;

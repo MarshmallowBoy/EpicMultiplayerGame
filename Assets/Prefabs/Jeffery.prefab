@@ -889,7 +889,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -400310251153081761, guid: 832d6123937dac84cacc6bf65e564ec2, type: 3}
+  - {fileID: 2100000, guid: 1b16c5eeea8017d46836bc79d8e8c132, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1795,7 +1795,7 @@ Transform:
   m_GameObject: {fileID: 7397413199108041212}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 22, z: 0}
+  m_LocalPosition: {x: -230.2, y: 22, z: -148.8}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1821,7 +1821,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 06762baf1bd91664197fd3b475d10c1f, type: 2}
+  - {fileID: 2100000, guid: ecea3f1292e9cb6459bbf20b53b38798, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2321,7 +2321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8d09b4471ad8fe44db00cc3b9bec1914, type: 2}
+  - {fileID: 2100000, guid: 5ea8b717991848844b050ba24a1004c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2613,6 +2613,7 @@ GameObject:
   - component: {fileID: 9113698077527694561}
   - component: {fileID: 4945153409450689526}
   - component: {fileID: 499805237804386332}
+  - component: {fileID: 4685386421550601175}
   m_Layer: 2
   m_Name: Jeffery
   m_TagString: Player
@@ -2794,3 +2795,34 @@ MonoBehaviour:
   Camera: {fileID: 0}
   Conversation: {fileID: 0}
   ConversationDialogue: {fileID: 0}
+--- !u!114 &4685386421550601175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118142732328607473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f71d96bb8938af48add67099f959c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hMod: 0
+  playerHealth: 25
+  playerMaxHealth: 25
+  playerBaseHealth: 25
+  playerLvl1Health: 25
+  playerHealthPerLevel: 10
+  currentLevel: 1
+  playerMaxLevel: 100
+  currentExp: 232235
+  expToNextLevel: 225
+  dMod: 0
+  playerDamage: 1
+  baseDamage: 3
+  resistance: 0
+  Gold: 0
+  animator: {fileID: 0}
+  character: {fileID: 0}
+  anim2: {fileID: 0}
+  Spawningpoint: {x: 0, y: 0, z: 0}
