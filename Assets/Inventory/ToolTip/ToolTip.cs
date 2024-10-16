@@ -70,23 +70,25 @@ public class ToolTip : MouseInteract
     {
         if(ActiveBobble.name == "Grain")
         {
-            pStats.playerHealth += ((int)pStats.playerMaxHealth / 5);
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 10);
         }
         else if (ActiveBobble.name == "SlimeGoo")
         {
-            pStats.playerHealth += ((int)pStats.playerMaxHealth / 15);
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 20);
         }
         else if (ActiveBobble.name == "SlimeSoda")
         {
-            pStats.playerHealth += ((int)pStats.playerMaxHealth / 45);
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 55);
         }
         else if (ActiveBobble.name == "Cookie")
         {
-            pStats.playerHealth += ((int)pStats.playerMaxHealth / 75);
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 95);
         }
         else if (ActiveBobble.name == "BlobFertalizer")
         {
             pStats.playerHealth -= ((int)pStats.playerMaxHealth / 50);
+            pStats.currentExp += 7500;
+            if (Random.Range(1, 25) == 1) { pStats.resistance++; }
         }
         Destroy(ActiveBobble);
     }
