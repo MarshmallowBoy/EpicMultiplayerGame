@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,20 +17,43 @@ public class VendorSelling : MonoBehaviour
     [Space]
     public int grainPrice = 2;
     public int cookiePrice = 7;
+    [Space]
+    public TextMeshProUGUI ssg1;
+    public TextMeshProUGUI ssg2;
+    public TextMeshProUGUI sss;
+    public TextMeshProUGUI sspc;
+    public TextMeshProUGUI sbf;
+    public TextMeshProUGUI sg;
+    public TextMeshProUGUI sc;
 
     void Awake()
     {
-        iManager = GameObject.FindWithTag("Inventory").GetComponent<InventoryManager>();
+        
+        slimeGooPrice = Random.Range(1, 7);
+        grainPrice = Random.Range(2, 15);
+        slimeGemPrice = Random.Range(2, 10);
+        slimeSodaPrice = Random.Range(3, 15);
+        blobFertalizerPrice = Random.Range(4, 25);
+        slimePurificationCatalystPrice = Random.Range(5, 95);
+        cookiePrice = Random.Range(7, 85);
+        
+        //iManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         pStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+
+        ssg1.text = $"Sell Goo {slimeGooPrice}"+"g Per Goo";
+        ssg2.text = $"Sell Gem {slimeGemPrice}"+"g Per Gem";
+        sss.text = $"Sell Soda {slimeSodaPrice}"+"g Per Soda";
+        sspc.text = $"Sell Catalyst {slimePurificationCatalystPrice}"+"g Per Catalyst";
+        sbf.text = $"Sell Fertalizer {blobFertalizerPrice}"+"g Per Fertalizer";
+        sg.text = $"Sell Grain {grainPrice}"+"g Per Grain";
+        sc.text = $"Sell Cookie {cookiePrice}"+"g Per Cookie";
     }
 
     public void SellSlimeGoo()
     {
-        Debug.Log("Hai");
         //remove a slime goo(ID 2) if you have at least one
         iManager.RemoveItem(2);
         pStats.Gold += slimeGooPrice;
-        Debug.Log("Bai");
     }
     public void SellSlimeGem()
     {
