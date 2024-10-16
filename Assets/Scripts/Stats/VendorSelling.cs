@@ -37,7 +37,7 @@ public class VendorSelling : MonoBehaviour
         slimePurificationCatalystPrice = Random.Range(5, 95);
         cookiePrice = Random.Range(7, 85);
         
-        //iManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        iManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         pStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
 
         ssg1.text = $"Sell Goo {slimeGooPrice}"+"g Per Goo";

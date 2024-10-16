@@ -296,7 +296,7 @@ RectTransform:
   m_GameObject: {fileID: 4010001262119870207}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68841577, y: 0.7222786, z: 0.63741493}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1920726596271799292}
@@ -305,7 +305,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -673, y: 410}
+  m_AnchoredPosition: {x: -722, y: 336.789}
   m_SizeDelta: {x: 573, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1445120758362365940
@@ -389,7 +389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2300283789585733385}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866401282641532650}
+        m_TargetAssemblyTypeName: TrainerButtons, Assembly-CSharp
+        m_MethodName: HealthIncrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4297554507829144004
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +564,7 @@ RectTransform:
   m_GameObject: {fileID: 4330100986042841467}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68841577, y: 0.7222786, z: 0.63741493}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4466751038128068875}
@@ -561,7 +573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -673, y: 148}
+  m_AnchoredPosition: {x: -722, y: 147.569}
   m_SizeDelta: {x: 573, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6382680827358314797
@@ -645,7 +657,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2115283329408688396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866401282641532650}
+        m_TargetAssemblyTypeName: TrainerButtons, Assembly-CSharp
+        m_MethodName: DamageIncrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4860925283078764079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,7 +1100,7 @@ RectTransform:
   m_GameObject: {fileID: 5587146636882857416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68841577, y: 0.7222786, z: 0.63741493}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8016346849096093761}
@@ -1085,7 +1109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -673, y: -120}
+  m_AnchoredPosition: {x: -722, y: -46}
   m_SizeDelta: {x: 573, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4337255341156567299
@@ -1169,7 +1193,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4338994889183078348}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866401282641532650}
+        m_TargetAssemblyTypeName: TrainerButtons, Assembly-CSharp
+        m_MethodName: ResisanceIncrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6197912186623975209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1332,7 +1368,7 @@ RectTransform:
   m_GameObject: {fileID: 6267447266702290156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68841577, y: 0.7222786, z: 0.63741493}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 773940905599310534}
@@ -1341,7 +1377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -673, y: -397}
+  m_AnchoredPosition: {x: -722, y: -246.07101}
   m_SizeDelta: {x: 573, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5182118776223219343
@@ -1425,7 +1461,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 717985595714987374}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5866401282641532650}
+        m_TargetAssemblyTypeName: TrainerButtons, Assembly-CSharp
+        m_MethodName: MaxLevelIncrease
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6452579449365792218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1623,7 @@ GameObject:
   - component: {fileID: 5866401282641532650}
   m_Layer: 5
   m_Name: TrainerUI
-  m_TagString: Untagged
+  m_TagString: Trainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

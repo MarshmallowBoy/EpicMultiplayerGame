@@ -13,12 +13,14 @@ public class ToolTip : MouseInteract
     public EventSystem m_EventSystem;
     public GameObject optionsMenu;
     public GameObject ActiveBobble;
+    public PlayerStats pStats;
     public bool NoRaycast;
     public bool NoResults;
 
     private void Awake()
     {
         m_EventSystem = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        pStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
     }
 
     private void Update()
@@ -66,6 +68,26 @@ public class ToolTip : MouseInteract
 
     public void EatAction()
     {
+        if(ActiveBobble.name == "Grain")
+        {
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 5);
+        }
+        else if (ActiveBobble.name == "SlimeGoo")
+        {
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 15);
+        }
+        else if (ActiveBobble.name == "SlimeSoda")
+        {
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 45);
+        }
+        else if (ActiveBobble.name == "Cookie")
+        {
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 75);
+        }
+        else if (ActiveBobble.name == "BlobFertalizer")
+        {
+            pStats.playerHealth -= ((int)pStats.playerMaxHealth / 50);
+        }
         Destroy(ActiveBobble);
     }
 }
