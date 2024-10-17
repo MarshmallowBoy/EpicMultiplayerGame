@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class VendorSelling : MonoBehaviour
 {
-    InventoryManager iManager;
+    [SerializeField] InventoryManager iManager;
     PlayerStats pStats;
     public int slimeGooPrice = 1;
     public int slimeGemPrice = 2;
@@ -28,17 +28,19 @@ public class VendorSelling : MonoBehaviour
 
     void Awake()
     {
-        
         slimeGooPrice = Random.Range(1, 7);
         grainPrice = Random.Range(2, 15);
-        slimeGemPrice = Random.Range(2, 10);
-        slimeSodaPrice = Random.Range(3, 15);
+        slimeGemPrice = Random.Range(2, 15);
+        slimeSodaPrice = Random.Range(3, 20);
         blobFertalizerPrice = Random.Range(4, 25);
         slimePurificationCatalystPrice = Random.Range(5, 95);
         cookiePrice = Random.Range(7, 85);
         
-        iManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         pStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+
+        if((slimeGemPrice/2) <= slimeGooPrice) { slimeGemPrice = (slimeGooPrice * 2) + 2; }
+        if(slimePurificationCatalystPrice <= (slimeGemPrice*2)) { slimePurificationCatalystPrice = slimeGemPrice * 3; }
+        if(slimeSodaPrice <= slimeGemPrice + slimeGooPrice) { slimeSodaPrice = slimeGemPrice + slimeGooPrice + 10; }
 
         ssg1.text = $"Sell Goo {slimeGooPrice}"+"g Per Goo";
         ssg2.text = $"Sell Gem {slimeGemPrice}"+"g Per Gem";
@@ -49,6 +51,7 @@ public class VendorSelling : MonoBehaviour
         sc.text = $"Sell Cookie {cookiePrice}"+"g Per Cookie";
     }
 
+    //These are callable even if there is nothing to sell, they should not be
     public void SellSlimeGoo()
     {
         //remove a slime goo(ID 2) if you have at least one

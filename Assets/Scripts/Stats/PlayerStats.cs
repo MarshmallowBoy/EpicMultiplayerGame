@@ -122,8 +122,8 @@ public class PlayerStats : MonoBehaviour
 
     void StatUpdate()
     {
-        playerBaseHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1)) + hMod;
-        playerMaxHealth = playerBaseHealth + (playerHealthPerLevel * (currentLevel - 1)) + hMod;
+        playerBaseHealth = playerLvl1Health + (playerHealthPerLevel * (currentLevel - 1));
+        playerMaxHealth = playerBaseHealth + hMod;
         baseDamage = currentLevel;
         playerDamage = baseDamage + dMod;
     }

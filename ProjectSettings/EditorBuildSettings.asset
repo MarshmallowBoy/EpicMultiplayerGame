@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Market.unity
     guid: 5197711d26b1d1c42a161bfc5ce9b36b
+  - enabled: 1
+    path: Assets/Scenes/Farming.unity
+    guid: 9e6cd3662e6bccb4e84c60954013f569
+  - enabled: 1
+    path: Assets/Scenes/House.unity
+    guid: 62d95b1dbe38ae94799b09718c768ce1
   m_configObjects: {}

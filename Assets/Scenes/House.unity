@@ -2710,7 +2710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7beb1076408b1a439397ed5250625bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneIndex: 0
+  SceneIndex: 4
 --- !u!65 &867837512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2946,9 +2946,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hMod: 0
   playerHealth: 25
+  playerMaxHealth: 25
   playerBaseHealth: 25
   playerLvl1Health: 25
-  playerMaxHealth: 25
   playerHealthPerLevel: 10
   currentLevel: 1
   playerMaxLevel: 50

@@ -34,6 +34,7 @@ public class TrainerButtons : MonoBehaviour
         hCost.text = $"{healthCost} Gold";
         dCost.text = $"{damageCost} Gold";
     }
+
     public void ResisanceIncrease()
     {
         if(playerStats.Gold < resistanceCost) { return; }
