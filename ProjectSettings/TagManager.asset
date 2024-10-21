@@ -12,6 +12,7 @@ TagManager:
   - NPC
   - Interactable
   - Trainer
+  - Enemy
   layers:
   - Default
   - TransparentFX

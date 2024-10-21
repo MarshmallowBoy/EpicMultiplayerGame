@@ -28,8 +28,8 @@ public class EnemyStats : MonoBehaviour
     public int eBaseHealth = 10;
     [SerializeField] private PlayerStats pstats;
     public int entityID = 0;
-    [SerializeField] private string entityName = "PH";
-    [SerializeField] private string entityType = "PH";
+    public string entityName = "PH";
+    public string entityType = "PH";
     public InventoryManager inventoryManager;
     public GameObject DeathAnimation;
     public bool Drop = false;
@@ -171,6 +171,11 @@ public class EnemyStats : MonoBehaviour
             eFinalHealth -= pstats.playerDamage;
             Destroy(other.gameObject);
         }
+    }
+
+    public void TakeDamage(int DamageAmount)
+    {
+        eFinalHealth -= DamageAmount;
     }
 
     private void Drops()

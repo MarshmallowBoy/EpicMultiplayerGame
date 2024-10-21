@@ -82,7 +82,7 @@ public class ToolTip : MouseInteract
         }
         else if (ActiveBobble.name == "Cookie")
         {
-            pStats.playerHealth += ((int)pStats.playerMaxHealth / 95);
+            pStats.playerHealth += ((int)pStats.playerMaxHealth / 85);
         }
         else if (ActiveBobble.name == "BlobFertalizer")
         {
