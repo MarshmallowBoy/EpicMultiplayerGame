@@ -11,10 +11,14 @@ public class InventoryManager : MouseInteract
 
     public static InventoryManager Instance { get; private set; }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     private void Start()
     {
         Instance = this;
-        DontDestroyOnLoad(this);
     }
 
     void Update()

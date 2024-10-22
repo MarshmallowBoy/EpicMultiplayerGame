@@ -8,6 +8,27 @@ public class InventoryController : MonoBehaviour
     public Character Char;
     public GameObject TrainerUI;
     public GameObject VendorUI;
+
+    void Awake()
+    {
+        
+        if (Inventory == null)
+        {
+            Inventory = GameObject.Find("InventoryCanvas");
+        }
+        else { return; }
+        if (TrainerUI == null)
+        {
+            TrainerUI = GameObject.Find("TrainerUI");
+        }
+        else { return; }
+        if (VendorUI == null)
+        {
+            VendorUI = GameObject.Find("VendorUI");
+        }
+        else { return; }
+    }
+
     void Update()
     {
         if (TrainerUI != null)
