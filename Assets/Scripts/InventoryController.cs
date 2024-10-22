@@ -6,8 +6,23 @@ public class InventoryController : MonoBehaviour
     public GameObject Dialogue;
     public CameraController CameraController;
     public Character Char;
+    public GameObject TrainerUI;
     void Update()
     {
+        if (TrainerUI.activeInHierarchy)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TrainerUI.SetActive(false);
+        }
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             Inventory.SetActive(!Inventory.activeInHierarchy);
