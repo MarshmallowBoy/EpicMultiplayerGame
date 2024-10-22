@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 7905346840272504030}
   - component: {fileID: 5244080831977447368}
   - component: {fileID: 6273334197401817010}
+  - component: {fileID: 867998811775981710}
   m_Layer: 0
   m_Name: SlimeClear
   m_TagString: Enemy
@@ -255,6 +256,18 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 0
   centerPoint: {fileID: 0}
+--- !u!114 &867998811775981710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4458320254280834340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9e1fa8472e75148967c657d4b9baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5988749929485782516
 GameObject:
   m_ObjectHideFlags: 0

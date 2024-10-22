@@ -1323,6 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1fa615f1bcfac49ad6d4548b86d958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iManager: {fileID: 0}
   slimeGooPrice: 1
   slimeGemPrice: 2
   slimeSodaPrice: 3

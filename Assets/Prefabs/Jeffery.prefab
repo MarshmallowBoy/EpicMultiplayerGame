@@ -2415,6 +2415,7 @@ GameObject:
   - component: {fileID: 499805237804386332}
   - component: {fileID: 4685386421550601175}
   - component: {fileID: 4734828360990144508}
+  - component: {fileID: 5572869302747335340}
   m_Layer: 2
   m_Name: Jeffery
   m_TagString: Player
@@ -2643,3 +2644,15 @@ MonoBehaviour:
     type: 3}
   FireSpot: {fileID: 0}
   ttf: 1.8
+--- !u!114 &5572869302747335340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118142732328607473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9e1fa8472e75148967c657d4b9baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
