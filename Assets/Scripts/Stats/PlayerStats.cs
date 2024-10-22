@@ -163,6 +163,10 @@ public class PlayerStats : MonoBehaviour
     {
         return hMod;
     }
+    public int GetResistance()
+    {
+        return resistance;
+    }
 
     public int GetPlayerHealth()
     {

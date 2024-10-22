@@ -56,6 +56,7 @@ public class SaveSystem : MonoBehaviour
                 myData.maxExp = pStats.GetMaxExp();
                 myData.currentLevel = pStats.GetCurrentLevel();
                 myData.currentExp = pStats.GetCurrentExp();
+                myData.resistance = pStats.GetResistance();
                 myData.gold = pStats.GetGold();
             }
         }
@@ -94,6 +95,7 @@ public class SaveSystem : MonoBehaviour
                 pStats.expToNextLevel = myData.maxExp;
                 pStats.currentExp = myData.currentExp;
                 pStats.currentLevel = myData.currentLevel;
+                pStats.resistance = myData.resistance;
                 pStats.Gold = myData.gold;
             }
         }
@@ -122,5 +124,5 @@ public class SaveSystem : MonoBehaviour
 public class SaveData
 {
     public float x, y, z;
-    public int currentExp, maxExp, currentLevel, currentHealth, maxHealth, healthModifier, gold;
+    public int currentExp, maxExp, currentLevel, currentHealth, maxHealth, healthModifier, gold, resistance;
 }
