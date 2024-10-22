@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 3211254184708070019}
   - component: {fileID: 2748129919569422204}
   - component: {fileID: 1676885347810178826}
+  - component: {fileID: 2750695044035743464}
   m_Layer: 0
   m_Name: SlimeSoda
   m_TagString: Enemy
@@ -480,6 +481,18 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 0
   centerPoint: {fileID: 0}
+--- !u!114 &2750695044035743464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276374636139959888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9e1fa8472e75148967c657d4b9baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8200792034617420625
 GameObject:
   m_ObjectHideFlags: 0

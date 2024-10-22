@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 1878837592021421159}
   - component: {fileID: 6993516734534775855}
   - component: {fileID: 4838415549254320508}
+  - component: {fileID: 3633242539860291705}
   m_Layer: 0
   m_Name: BlobQueen
   m_TagString: Enemy
@@ -599,3 +600,15 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 0
   centerPoint: {fileID: 0}
+--- !u!114 &3633242539860291705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102963580305313147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9e1fa8472e75148967c657d4b9baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

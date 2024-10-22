@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1214783043972679838}
   - component: {fileID: 5568161651136857458}
   - component: {fileID: 4383780325562543286}
+  - component: {fileID: 7140926403308965001}
   m_Layer: 0
   m_Name: BlobFull
   m_TagString: Enemy
@@ -191,6 +192,18 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 0
   centerPoint: {fileID: 0}
+--- !u!114 &7140926403308965001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012056511358661303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9e1fa8472e75148967c657d4b9baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2997706994448997140
 GameObject:
   m_ObjectHideFlags: 0

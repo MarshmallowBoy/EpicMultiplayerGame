@@ -2654,12 +2654,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 201355416}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &569268098 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6914006853265317848, guid: 649cf730fec8a8e4b9e8b7f3c7551f35,
-    type: 3}
-  m_PrefabInstance: {fileID: 7145319383512926191}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &630515236
 GameObject:
   m_ObjectHideFlags: 0
@@ -4834,12 +4828,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1914183596 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4686989997297065574, guid: d96b9e0bfe29a5445b5c3275e964cd98,
-    type: 3}
-  m_PrefabInstance: {fileID: 580925836681693119}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977869619
 GameObject:
   m_ObjectHideFlags: 0
@@ -5227,19 +5215,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 427872080390199045, guid: d96b9e0bfe29a5445b5c3275e964cd98,
         type: 3}
-      propertyPath: VendorUI
-      value: 
-      objectReference: {fileID: 1914183596}
-    - target: {fileID: 427872080390199045, guid: d96b9e0bfe29a5445b5c3275e964cd98,
-        type: 3}
       propertyPath: iManager
       value: 
       objectReference: {fileID: 41132850}
-    - target: {fileID: 427872080390199045, guid: d96b9e0bfe29a5445b5c3275e964cd98,
-        type: 3}
-      propertyPath: vendorUI
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2931193907942814785, guid: d96b9e0bfe29a5445b5c3275e964cd98,
         type: 3}
       propertyPath: m_Pivot.x
@@ -5344,11 +5322,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VendorUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686989997297065574, guid: d96b9e0bfe29a5445b5c3275e964cd98,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6456,25 +6429,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5866401282641532650, guid: 649cf730fec8a8e4b9e8b7f3c7551f35,
-        type: 3}
-      propertyPath: TrainerUI
-      value: 
-      objectReference: {fileID: 569268098}
-    - target: {fileID: 5866401282641532650, guid: 649cf730fec8a8e4b9e8b7f3c7551f35,
-        type: 3}
-      propertyPath: trainerUI
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6914006853265317848, guid: 649cf730fec8a8e4b9e8b7f3c7551f35,
         type: 3}
       propertyPath: m_Name
       value: TrainerUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 6914006853265317848, guid: 649cf730fec8a8e4b9e8b7f3c7551f35,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8524860644202020239, guid: 649cf730fec8a8e4b9e8b7f3c7551f35,
         type: 3}

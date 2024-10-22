@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8910260246483326873}
   - component: {fileID: 6881427194314201602}
   - component: {fileID: 6860969111949122788}
+  - component: {fileID: 3943927150113973445}
   m_Layer: 0
   m_Name: SlimePink
   m_TagString: Enemy
@@ -191,6 +192,18 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 0
   centerPoint: {fileID: 0}
+--- !u!114 &3943927150113973445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674346682803050545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9e1fa8472e75148967c657d4b9baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2195496742250648060
 GameObject:
   m_ObjectHideFlags: 0

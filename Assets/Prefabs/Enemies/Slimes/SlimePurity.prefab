@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3373053486467845174}
   - component: {fileID: 204008463182520767}
   - component: {fileID: 1825438332177261558}
+  - component: {fileID: 9148992754048913203}
   m_Layer: 0
   m_Name: SlimePurity
   m_TagString: Enemy
@@ -191,6 +192,18 @@ MonoBehaviour:
   agent: {fileID: 0}
   range: 0
   centerPoint: {fileID: 0}
+--- !u!114 &9148992754048913203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761450801849462896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db9e1fa8472e75148967c657d4b9baff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2925267146262182835
 GameObject:
   m_ObjectHideFlags: 0
