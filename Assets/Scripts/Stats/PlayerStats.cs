@@ -7,15 +7,15 @@ public class PlayerStats : MonoBehaviour
     public int hMod = 0;
     public int playerHealth = 25;
     public int playerMaxHealth = 25;
-    [SerializeField] int playerBaseHealth = 25;
+    public int playerBaseHealth = 25;
     [SerializeField] int playerLvl1Health = 25;
     [SerializeField] int playerHealthPerLevel = 10;
     [Space]
-    [SerializeField] int currentLevel = 1;
-    [SerializeField] int playerMaxLevel = 50;
+    public int currentLevel = 1;
+    public int playerMaxLevel = 50;
     [Space]
     public int currentExp = 0;
-    [SerializeField] int expToNextLevel = 225;
+    public int expToNextLevel = 225;
     [Space]
     public int dMod = 0;
     public int playerDamage = 1;
@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-        if (GameObject.FindWithTag("Trainer") != null)
+        if(GameObject.FindWithTag("Trainer") != null)
         {
             statUp = GameObject.FindWithTag("Trainer").GetComponent<TrainerButtons>();
         }
@@ -158,6 +158,58 @@ public class PlayerStats : MonoBehaviour
         }
         */
     }
+
+    public int GetHealthModifier()
+    {
+        return hMod;
+    }
+
+    public int GetPlayerHealth()
+    {
+        return playerHealth;
+    }
+
+    public int GetPlayerMaxHealth()
+    {
+        return playerMaxHealth;
+    }
+
+    public int GetMaxExp()
+    {
+        return expToNextLevel;
+    }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
+
+    public int GetCurrentExp()
+    {
+        return currentExp;
+    }
+
+    public int GetGold()
+    {
+        return Gold;
+    }
+
+    public void SetMaxHealth(int health)
+    {
+        playerMaxHealth = health;
+    }
+
+    public void SetCurrentHealth(int health)
+    {
+        playerHealth = health;
+    }
+
+    public void SetHealthModifier(int health)
+    {
+        hMod = health;
+    }
+    
+
 
     IEnumerator Respawn()
     {
