@@ -14,6 +14,7 @@ public class InventoryManager : MouseInteract
     private void Start()
     {
         Instance = this;
+        DontDestroyOnLoad(this);
     }
 
     void Update()

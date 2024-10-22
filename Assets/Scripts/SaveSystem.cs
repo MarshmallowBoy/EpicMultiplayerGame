@@ -11,10 +11,7 @@ public class SaveSystem : MonoBehaviour
 
     private static readonly string keyWord = "soggysufferingsheep";
     private string file;
-    private void Start()
-    {
-        Debug.Log(Application.persistentDataPath);
-    }
+
     private void Awake()
     {
         if(CompareTag("Player"))
@@ -35,7 +32,10 @@ public class SaveSystem : MonoBehaviour
         {
             Load();
         }
-
+        if(Input.GetKeyDown(KeyCode.V)) 
+        { 
+            Save(); 
+        }
         if(Input.GetKeyDown(KeyCode.Y))
         {
             Delete();
