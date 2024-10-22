@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -17,12 +18,12 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        anim2.GetComponentInChildren<Slider>().value = health;
         animator.SetFloat("Health", health);
         if (health <= 0)
         {
             character.enabled = false;
             StartCoroutine(Respawn());
-            
         }
     }
 
@@ -35,6 +36,5 @@ public class Health : MonoBehaviour
         transform.position = Spawningpoint;
         character.enabled = true;
         health = 100;
-        
     }
 }
