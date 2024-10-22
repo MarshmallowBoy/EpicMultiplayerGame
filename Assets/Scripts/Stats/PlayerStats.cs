@@ -35,7 +35,10 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-        statUp = GameObject.FindWithTag("Trainer").GetComponent<TrainerButtons>();
+        if (GameObject.FindWithTag("Trainer") != null)
+        {
+            statUp = GameObject.FindWithTag("Trainer").GetComponent<TrainerButtons>();
+        }
         animator = GetComponent<Animator>();
         character = GetComponent<Character>();
         anim2 = GameObject.Find("Canvas").GetComponent<Animator>();
