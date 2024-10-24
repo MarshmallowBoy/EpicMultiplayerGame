@@ -26,7 +26,7 @@ public class Shooting : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && timer >= ttf)
         {
             damage = player.playerDamage;
-            Shoot();
+            //Shoot();
             RayShoot();
             Debug.LogWarning("Fired");
         }

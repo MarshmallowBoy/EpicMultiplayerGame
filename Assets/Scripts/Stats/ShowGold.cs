@@ -8,13 +8,9 @@ public class ShowGold : MonoBehaviour
     public PlayerStats player;
     public TextMeshProUGUI gold;
 
-    void Awake()
-    {
-        player = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
-    }
-
     void Update()
     {
+        if(player == null) { player = GameObject.FindWithTag("Player").GetComponent<PlayerStats>(); }
         gold.text = $"Current Gold: {player.Gold}";        
     }
 }

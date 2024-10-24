@@ -35,6 +35,14 @@ public class TrainerButtons : MonoBehaviour
         dCost.text = $"{damageCost} Gold";
     }
 
+    private void Update()
+    {
+        if (playerStats == null)
+        {
+            playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        }
+    }
+
     public void ResisanceIncrease()
     {
         if(playerStats.Gold < resistanceCost) { return; }
@@ -42,6 +50,7 @@ public class TrainerButtons : MonoBehaviour
         if (resistanceCost < rCostMax) { resistanceCost += rCostScaler; }
         rCost.text = $"{resistanceCost} Gold";
     }
+
     public void HealthIncrease()
     {
         if(playerStats.Gold < healthCost) { return; }

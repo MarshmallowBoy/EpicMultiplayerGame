@@ -47,4 +47,6 @@ MonoBehaviour:
   enemiesToSpawn:
   - {fileID: 7748528756801680212, guid: f9ea0631c244f9944a522a1cddac38f3, type: 3}
   - {fileID: 9102963580305313147, guid: 3adabaf1279b1f54f86ef71713736a67, type: 3}
+  - {fileID: 0}
+  isActive: 0
   timeToSpawn: 10

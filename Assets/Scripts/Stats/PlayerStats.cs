@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-        if(GameObject.FindWithTag("Trainer") != null)
+        if(GameObject.FindWithTag("Trainer") == null)
         {
             statUp = GameObject.FindWithTag("Trainer").GetComponent<TrainerButtons>();
         }

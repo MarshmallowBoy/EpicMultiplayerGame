@@ -48,4 +48,6 @@ MonoBehaviour:
   - {fileID: 6878080917232819915, guid: 8029c242d58425e42a9746bfd779f23e, type: 3}
   - {fileID: 674346682803050545, guid: c96cdf2b0d2ed694ea28350104745dc4, type: 3}
   - {fileID: 3487342027997507882, guid: 66af4fc519734d0449680f11aa109e3e, type: 3}
+  - {fileID: 0}
+  isActive: 0
   timeToSpawn: 10

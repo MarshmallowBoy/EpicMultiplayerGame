@@ -37,6 +37,7 @@ public class VendorSelling : MonoBehaviour
         cookiePrice = Random.Range(7, 85);
         
         pStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+        iManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
 
         if((slimeGemPrice/2) <= slimeGooPrice) { slimeGemPrice = (slimeGooPrice * 2) + 2; }
         if(slimePurificationCatalystPrice <= (slimeGemPrice*2)) { slimePurificationCatalystPrice = slimeGemPrice * 3; }
@@ -49,6 +50,13 @@ public class VendorSelling : MonoBehaviour
         sbf.text = $"Sell Fertalizer {blobFertalizerPrice}"+"g Per Fertalizer";
         sg.text = $"Sell Grain {grainPrice}"+"g Per Grain";
         sc.text = $"Sell Cookie {cookiePrice}"+"g Per Cookie";
+    }
+    private void Update()
+    {
+        if (iManager == null)
+        {
+            iManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        }
     }
 
     //These are callable even if there is nothing to sell, they should not be

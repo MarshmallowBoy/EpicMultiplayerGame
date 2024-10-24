@@ -4,6 +4,7 @@ using System;
 public class InventoryManager : MouseInteract
 {
     public ContainerInventory Container;
+    public Canvas myCanvas;
     public GameObject ContainerInventoryUI;
     public GameObject[] BobbleIndex;
     public GameObject[] HotbarSlots;
@@ -11,14 +12,10 @@ public class InventoryManager : MouseInteract
 
     public static InventoryManager Instance { get; private set; }
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
-
     private void Start()
     {
         Instance = this;
+        myCanvas.enabled = false;
     }
 
     void Update()

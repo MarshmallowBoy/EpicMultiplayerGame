@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
@@ -6,34 +7,32 @@ public class InventoryController : MonoBehaviour
     public GameObject Dialogue;
     public CameraController CameraController;
     public Character Char;
+    public Canvas iCanvas;
     public GameObject TrainerUI;
     public GameObject VendorUI;
 
     void Awake()
     {
-        
-        if (Inventory == null)
-        {
-            Inventory = GameObject.Find("InventoryCanvas");
-        }
-        else { return; }
-        if (TrainerUI == null)
+        Inventory = GameObject.Find("InventoryCanvas");
+        iCanvas = Inventory.GetComponent<Canvas>();
+        if(TrainerUI == null)
         {
             TrainerUI = GameObject.Find("TrainerUI");
         }
-        else { return; }
-        if (VendorUI == null)
+        if(VendorUI == null)
         {
             VendorUI = GameObject.Find("VendorUI");
         }
-        else { return; }
+        iCanvas.enabled = false;
+        DontDestroyOnLoad(Inventory);
     }
 
     void Update()
     {
-        if (TrainerUI != null)
+        if(Inventory == null) { Inventory = GameObject.Find("InventoryCanvas"); }
+        if(TrainerUI != null)
         {
-            if (TrainerUI.activeInHierarchy || VendorUI.activeInHierarchy)
+            if(TrainerUI.activeInHierarchy || VendorUI.activeInHierarchy)
             {
                 Cursor.lockState = CursorLockMode.Confined;
             }
@@ -42,22 +41,22 @@ public class InventoryController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if(Input.GetKeyDown(KeyCode.Escape))
             {
                 TrainerUI.SetActive(false);
                 VendorUI.SetActive(false);
             }
         }
-        
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if(Input.GetKeyDown(KeyCode.Tab))
         {
-            Inventory.SetActive(!Inventory.activeInHierarchy);
+            iCanvas.enabled = !iCanvas.enabled;
             
-            CameraController.enabled = !Inventory.activeInHierarchy;
-            Char.enabled = !Inventory.activeInHierarchy;
+            CameraController.enabled = !iCanvas.enabled;
+            Char.enabled = !iCanvas.enabled;
         }
-        if (Inventory.activeInHierarchy || Dialogue.activeInHierarchy)
+
+        if(iCanvas.enabled == true || Dialogue.activeInHierarchy)
         {
             Cursor.lockState = CursorLockMode.Confined;
         }

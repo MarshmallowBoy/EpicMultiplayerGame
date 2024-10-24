@@ -48,4 +48,6 @@ MonoBehaviour:
   - {fileID: 109494250704175477, guid: a633945cb537aaa47955f1bed23b06d8, type: 3}
   - {fileID: 386299539034740712, guid: e3546419c7086a34abdcbb8f383abe5c, type: 3}
   - {fileID: 4458320254280834340, guid: d59e66df8d806744c9db060292b52220, type: 3}
+  - {fileID: 0}
+  isActive: 0
   timeToSpawn: 10
